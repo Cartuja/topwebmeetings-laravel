@@ -6,8 +6,18 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 
 
 
-abstract class Controller extends BaseController {
+abstract class ControllerUsuario extends BaseController {
 
 	use DispatchesCommands, ValidatesRequests;
+
+
+  function Obtener1Usuario($id_usuario)
+  {
+    $usuario=ModelUsuario::where('id',1)->get();
+
+    return $usuario;
+
+    
+  }
 
 }
