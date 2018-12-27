@@ -36,7 +36,6 @@
 		<div id="header_top">
 			<div class="top_line theme_accent_bg"></div>
 			<div id="header_top_inner">
-
 				<!-- Area login -->
 				<div id="login_area">
 					<a href="#" class="link_login icon-login-1 theme_accent_bg" title="Login"></a>
@@ -47,12 +46,21 @@
 				<!-- breadcrumbs -->
 				<div id="breadcrumbs_area">
 				  <ul class="breadcrumbs">
-				    <li class="home"><a href="index.php">Inicio</a></li>
-				    <li class="home"><a href="allwebs.php">Webs</a></li>
+				    <li class="home"><a href="{{ route('inicio') }}">Inicio</a></li>
+				    <li class="home"><a href="{{ route('web') }}">Webs</a></li>
 				    <li class="home"><a href="blog.php">Blog</a></li>
 				  </ul>
 				</div>
 				<!-- /breadcrumbs -->
+
+				<!-- Logo -->
+					<div class="logo logo_text">
+						<a href="index.html">
+							<span class="logo_title theme_header">Top<span class="theme_accent">web</span>meetings</span><span class="logo_slogan theme_info"></span>
+						</a>
+					</div>
+					<!-- /Logo -->
+					
  		</div>
 		<div id="header_middle_wrapper">
 			<div id="header_middle"  >
@@ -65,7 +73,7 @@
 					<!-- main menu -->
 					<nav id="mainmenu_area" class="mainmenu_area theme_menu" role="navigation">
 					<ul id="mainmenu" class="sf-js-enabled">
-						<li class="lightblue"><a href="{{ route ('inicio') }} " class="sf-with-ul">Inicio<span class="sf-sub-indicator icon-right-open"></span></a></li>
+						<li class="lightblue"><a href="{{ route ('inicio') }}" class="sf-with-ul">Inicio<span class="sf-sub-indicator icon-right-open"></span></a></li>
 						<li class="brown"><a href="{{ route ('web') }} " class="sf-with-ul">Webs<span class="sf-sub-indicator icon-right-open"></span></a></li>
 						<li id="blob" style="width: 0px; height: 0px; left: 0px; top: 0px; background-color: rgb(187, 187, 187); opacity: 1;"></li>
 						<!--<li class="red"><a href="editarweb" class="sf-with-ul"> Editar webs <span class="sf-sub-indicator icon-right-open"></span></a></li>-->
@@ -157,16 +165,15 @@ function centrar() {
     moveTo(iz,de);
 }
 </script>
-<script type="text/javascript" src="js/scripts/registrarse.js?ver=<?= date('Y-m-d-h-i-s') ?>"></script>
 <!-- Login Acceder Form -->
 <a href="#" id="toTop" class="theme_button icon-up-open-big"></a>
 <div id="popup_login" class="popup_form">
     <div class="popup_body theme_article">
     <h4 class="popup_title">Login</h4>
-      <form action="Usuarios/login.php" method="post" name="login_form">
+      <form action="inicio" method="POST" name="login_form">
         <div class="popup_field"><input type="text" name="log" id="log" placeholder="Login*" /></div>
         <div class="popup_field"><input type="password" name="pwd" id="pwd" placeholder="Password*" /></div>
-        <div class="popup_field popup_button"><button href="#" type="submit" name="acceder" class="theme_button">Login</button></div>
+        <div class="popup_field popup_button"><input type="submit" name="acceder" class="theme_button" value="Login"></div>
         <div class="popup_field forgot_password">
           <a href="#">Forgot password?</a>
         </div>
@@ -218,6 +225,5 @@ function centrar() {
  <script type="text/javascript" src="/js/jquery/ui/jquery.ui.widget.min.js"></script>
  <script type="text/javascript" src="/js/jquery/ui/jquery.ui.mouse.min.js"></script>
  <script type="text/javascript" src="/js/jquery/ui/jquery.ui.draggable.min.js"></script>
- <script type="text/javascript" src="/js/scripts/login.js"></script>
 </body>
 </html>

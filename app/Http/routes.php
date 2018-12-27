@@ -16,9 +16,6 @@ Route::get('/', ['as' => 'inicio', 'uses' => 'ControllerPageIndex@route']);
 //El primer meetic es el que se ve en la url
 //Route::get('meetic', ['as' => 'meetic', 'uses' => 'ControllerPageMeetic@route']);
 
-
-//Route::get('home', 'HomeController@index');
-
 //Así se le pasa una variable por la ruta
 //Si queremos que no sea obligatorio, añadimos después del nombre una "?" y añadir valor por defecto
 // $nombre = "Isaac"
