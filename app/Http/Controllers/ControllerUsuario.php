@@ -4,6 +4,7 @@ use Illuminate\Foundation\Bus\DispatchesCommands;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 
+use App\Http\Models\ModelUsuario;
 
 
 abstract class ControllerUsuario extends BaseController {
@@ -17,7 +18,7 @@ abstract class ControllerUsuario extends BaseController {
 
     return $usuario;
 
-    
+
   }
 
 }
