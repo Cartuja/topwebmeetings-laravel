@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Models\ModelUsuario;
 
+//Intermediario entre el modelo y las vistas
+
 class ControllerPageTop extends Controller {
 
 	/*
@@ -34,12 +36,9 @@ class ControllerPageTop extends Controller {
 	 */
 	public static function Route()
 	{
-    $usuario=new ModelUsuario();
-    $usuario->EmailUsuario='usuario_'.date('His').'@hotmail.com';
-
-
-
-    $usuario->save();
+    //$usuario=new ModelUsuario();
+    //$usuario->EmailUsuario='usuario_'.date('His').'@hotmail.com';
+    //$usuario->save();
 
     //$usuario=ModelUsuario::Where('IdUsuario',2)->get();
 
@@ -57,8 +56,8 @@ class ControllerPageTop extends Controller {
 
     }
 
-    return '';
-		return view('inicio');*/
+    return ''; */
+		return view('inicio');
 	}
 
 }

@@ -4,6 +4,7 @@ namespace App\Http\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+//Se basa en recoger los datos de la bdd
 class ModelUsuario extends Model
 {
   protected $table = 'Usuarios';
