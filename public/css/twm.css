@@ -1,0 +1,192 @@
+.logo {
+	padding: 20px;
+	width: 250px;
+}
+
+.zonLog {
+	width: 270px;
+}
+
+.posNum {
+	margin: 25px auto -20px;
+	color: #000;
+	text-align: center;
+	vertical-align: middle;
+	background: #ffc900;
+	padding: 5px;
+	width: 20px;
+	height: 20px;
+	border-radius: 51px;
+	line-height: 20px;
+}
+
+.icon-mobile {
+	float: right;
+	font-size: 30px;
+	margin-left: 15px;
+	color: #666666;
+}
+.icon-monitor {
+	float: right;
+	font-size: 32px;
+	color: #009fdc;
+	margin-left: 12px;
+}
+.icon-heart-1 {
+	float: right;
+	font-size: 35px;
+	color: #666666;
+}
+
+.comenVis {
+	width: 20%;
+}
+
+.inform {
+	margin: 16px;
+}
+
+.compara {
+	margin: 16px;
+	margin-right: 80px;
+}
+
+.linea {
+	border-bottom: 1px solid #00a8dd;
+}
+
+.tgs {
+	vertical-align: -webkit-baseline-middle;
+	display: -webkit-inline-box;
+	margin-top: 10px;
+}
+
+.valoLis {
+	margin-left: 25px !important;
+  line-height: 18px !important;
+  margin-top: 10px !important;
+}
+
+.noBG {
+	background: transparent !important;
+}
+.ocul {
+	display: none !important;
+}
+
+.pq {
+	font-size: 17px !important;
+}
+
+.an20 {
+	width: 20%;
+}
+
+.der {
+	float: right;
+}
+.izq {
+	float: left;
+  margin-right: 50px;
+  margin-top: 15px;
+}
+.der15 {
+	margin-right: 15px;
+}
+
+.texCen {
+	text-align: center;
+}
+
+.imgFic {
+	height: 400px !important;
+}
+
+.val {
+	font-size: 35px;
+}
+
+.app {
+	float: right;
+	margin: 25px auto 10px;
+	width: 100%;
+}
+.appIco {
+	float: right;
+	font-size: 30px;
+	margin-left: 15px;
+	color: #009fdc;
+}
+.webIco {
+	float: right;
+	font-size: 32px;
+	color: #009fdc;
+	margin-left: 12px;
+}
+.matchIco {
+	float: right;
+	font-size: 35px;
+	color: #009fdc;
+}
+
+.comp3 {
+	padding: 20px 15px;
+}
+
+.texOs {
+	color: #333;
+}
+
+.listImg {
+	height: 175px;
+	margin: -5px 15px 0px 0px;
+	padding: 2px 10px;
+	color: #333;
+	text-transform: none;
+	font-size: 14px;
+}
+.listCat {
+	background: #005d80;
+	color: #fff !important;
+	margin: 5px 55px 0px 0px;
+	padding: 5px 10px;
+	text-transform: none;
+  font-size: 14px;
+}
+.listNom {
+	margin: -5px 15px 0px 0px;
+  padding: 2px 10px;
+  color: #333;
+	text-transform: none;
+	font-size: 14px;
+}
+.listVal {
+	background: #005d80;
+	margin: 6px 0px 0px -10px;
+	padding: 3px 10px;
+	width: 100%;
+	color: #fff;
+	text-transform: none;
+	font-size: 14px;
+}
+.listDesc {
+	margin: 0px 0px 0px 0px;
+	padding: 2px 10px;
+	height: 110px;
+	color: #333;
+	text-transform: none;
+	font-size: 14px;
+}
+.listCara {
+	background: #005d80;
+	margin: 6px 55px 0px 0px;
+	padding: 3px 10px;
+	color: #fff;
+	text-transform: none;
+	font-size: 14px;
+}
+
+.texGri {
+	margin-left: 35px;
+	color: #333;
+}

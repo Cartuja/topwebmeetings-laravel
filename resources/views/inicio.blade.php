@@ -1,5 +1,5 @@
-@extends('principal')
+@extends('principal') <!-- Extiene de principal, que contiene el head, menu, footer -->
 
-@section('content')
-AAAA
-@endsection
+@section('contenido') <!-- Aquí se va a mostrar el ranking de webs -->
+  <h1> Inicio </h1>
+@stop

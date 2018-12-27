@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Models\ModelUsuario;
+use App\Http\Models\ModelAllWeb;
 
 //Intermediario entre el modelo y las vistas
 
-class ControllerPageTop extends Controller {
+class ControllerPageAllWeb extends Controller {
 
 	/*
 	|--------------------------------------------------------------------------
@@ -34,30 +34,9 @@ class ControllerPageTop extends Controller {
 	 *
 	 * @return Response
 	 */
-	public static function Route()
+	public function route($nombre = "error")
 	{
-    //$usuario=new ModelUsuario();
-    //$usuario->EmailUsuario='usuario_'.date('His').'@hotmail.com';
-    //$usuario->save();
-
-    //$usuario=ModelUsuario::Where('IdUsuario',2)->get();
-
-    //$usuario->forceDelete();
-
-
-    /*$usuarios=ModelUsuario::Where('IdUsuario',1)->get();
-
-    foreach ($usuarios as $usuario)
-    {
-      $usuario->EmailUsuario='otro@gmail.com';
-      //echo '<br />'.$usuario->IdUsuario.' : '.$usuario->EmailUsuario;
-      $usuario->update();
-
-
-    }
-
-    return ''; */
-		return view('inicio');
+		return view('web', compact('nombre'));
 	}
 
 }

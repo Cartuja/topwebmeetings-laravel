@@ -10,16 +10,19 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-use App\Http\Controllers\ControllerPageTop;
 
-Route::get('/', function ()
-{
-	return ControllerPageTop::Route();
-}
+Route::get('/', ['as' => 'inicio', 'uses' => 'ControllerPageIndex@route']);
 
-);
+//El primer meetic es el que se ve en la url
+//Route::get('meetic', ['as' => 'meetic', 'uses' => 'ControllerPageMeetic@route']);
 
-Route::get('home', 'HomeController@index');
+
+//Route::get('home', 'HomeController@index');
+
+//Así se le pasa una variable por la ruta
+//Si queremos que no sea obligatorio, añadimos después del nombre una "?" y añadir valor por defecto
+// $nombre = "Isaac"
+Route::get('web/{nombre?}', ['as' => 'web', 'uses' => 'ControllerPageAllWeb@route']);//->where('nombre', 'meetic');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
