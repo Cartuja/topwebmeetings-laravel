@@ -60,7 +60,9 @@ class ControllerUsuario extends Controller
         $nuevo_usuario->TipoUsuario='estandar';
         $nuevo_usuario->FechaAltaUsuario= date('Ymd');
         $nuevo_usuario->save();
-      }else{
+      }
+      else
+      {
         $devuelve['ok'] = 0; //Ya existe en la bdd
       }
     }
