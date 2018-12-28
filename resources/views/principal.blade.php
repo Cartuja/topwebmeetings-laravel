@@ -60,7 +60,7 @@
 						</a>
 					</div>
 					<!-- /Logo -->
-					
+
  		</div>
 		<div id="header_middle_wrapper">
 			<div id="header_middle"  >
@@ -165,15 +165,17 @@ function centrar() {
     moveTo(iz,de);
 }
 </script>
+<script type="text/javascript" src="/js/scripts/login.js?ver=<?= date('Y-m-d-h-i-s') ?>"></script>
 <!-- Login Acceder Form -->
 <a href="#" id="toTop" class="theme_button icon-up-open-big"></a>
 <div id="popup_login" class="popup_form">
     <div class="popup_body theme_article">
     <h4 class="popup_title">Login</h4>
-      <form action="inicio" method="POST" name="login_form">
+      <form action="/ajax/login" method="POST" name="login_form">
+				<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
         <div class="popup_field"><input type="text" name="log" id="log" placeholder="Login*" /></div>
         <div class="popup_field"><input type="password" name="pwd" id="pwd" placeholder="Password*" /></div>
-        <div class="popup_field popup_button"><input type="submit" name="acceder" class="theme_button" value="Login"></div>
+        <div class="popup_field popup_button"><button onclick="return Login()" name="acceder" class="theme_button"> Login</button></div>
         <div class="popup_field forgot_password">
           <a href="#">Forgot password?</a>
         </div>
@@ -182,6 +184,7 @@ function centrar() {
       </div>
     </form>
     </div>
+		<div id="error_registro"> </div>
 </div>
 <!-- /Login Acceder Form -->
 

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ControllerUsuario;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -19,7 +20,12 @@ Route::get('/', ['as' => 'inicio', 'uses' => 'ControllerPageIndex@route']);
 //Así se le pasa una variable por la ruta
 //Si queremos que no sea obligatorio, añadimos después del nombre una "?" y añadir valor por defecto
 // $nombre = "Isaac"
-Route::get('web/{nombre?}', ['as' => 'web', 'uses' => 'ControllerPageAllWeb@route']);//->where('nombre', 'meetic');
+Route::get('/web/{nombre?}', ['as' => 'web', 'uses' => 'ControllerPageAllWeb@route']);//->where('nombre', 'meetic');
+
+Route::match(['get','post'],'/ajax/login', function ()
+{
+	return ControllerUsuario::Login(Input::All());
+});
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 //Se basa en recoger los datos de la bdd
 class ModelUsuario extends Model
 {
-  protected $table = 'Usuario';
+  protected $table = 'Usuarios';
   protected $primaryKey='IdUsuario';
 
   //const CREATED_AT = 'FechaAltaUsuario';
