@@ -10,8 +10,8 @@ class ModelUsuario extends Model
   protected $table = 'Usuarios';
   protected $primaryKey='IdUsuario';
 
-  //const CREATED_AT = 'FechaAltaUsuario';
-  //const UPDATED_AT = 'FechaModificacionUsuario';
+  const CREATED_AT = 'FechaAltaUsuario';
+  const UPDATED_AT = 'FechaModificacionUsuario';
 
   //public $timestamps = false;
 }
