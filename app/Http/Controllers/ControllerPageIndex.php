@@ -35,24 +35,13 @@ class ControllerPageIndex extends Controller {
 	 */
 	public function route()
 	{
-    //$usuario=new ModelUsuario();
-    //$usuario->EmailUsuario='usuario_'.date('His').'@hotmail.com';
-    //$usuario->save();
-
-    //$usuario=ModelUsuario::Where('IdUsuario',2)->get();
-
-    //$usuario->forceDelete();
-
-
-    /*$usuarios=ModelUsuario::Where('IdUsuario',1)->get();
-
-    foreach ($usuarios as $usuario)
-    {
-      $usuario->EmailUsuario='otro@gmail.com';
-      //echo '<br />'.$usuario->IdUsuario.' : '.$usuario->EmailUsuario;
-      $usuario->update();
-    }*/
 		return view('inicio');
+	}
+
+	public function AllWebs()
+	{
+			$webs = ModelIndex::all();
+			return view('inicio', compact('webs'));
 	}
 
 }

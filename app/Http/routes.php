@@ -1,18 +1,12 @@
 <?php
 
 use App\Http\Controllers\ControllerUsuario;
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
 
+/* Ruta Inicio */
 Route::get('/', ['as' => 'inicio', 'uses' => 'ControllerPageIndex@route']);
+
+/* Ruta Inicio con ranking para recoger las webs */
+Route::get('/ranking', 'ControllerPageIndex@AllWebs');
 
 //El primer meetic es el que se ve en la url
 //Route::get('meetic', ['as' => 'meetic', 'uses' => 'ControllerPageMeetic@route']);
@@ -22,9 +16,14 @@ Route::get('/', ['as' => 'inicio', 'uses' => 'ControllerPageIndex@route']);
 // $nombre = "Isaac"
 Route::get('/web/{nombre?}', ['as' => 'web', 'uses' => 'ControllerPageAllWeb@route']);//->where('nombre', 'meetic');
 
-Route::match(['get','post'],'/ajax/login', function ()
+Route::post('/ajax/login', function ()
 {
-	return ControllerUsuario::Login(Input::All());
+	return response()->json(ControllerUsuario::Login(Input::All()));
+});
+
+Route::match(['get','post'],'/ajax/registro', function ()
+{
+	return json_encode(ControllerUsuario::Registro(Input::All()));
 });
 
 Route::controllers([

@@ -9,7 +9,7 @@ class ModelIndex extends Model
 {
   protected $table = 'Webs';
   protected $primaryKey='IdWeb';
-  
+
 
   //const CREATED_AT = 'FechaAltaUsuario';
   //const UPDATED_AT = 'FechaModificacionUsuario';

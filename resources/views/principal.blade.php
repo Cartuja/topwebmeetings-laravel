@@ -171,7 +171,8 @@ function centrar() {
 <div id="popup_login" class="popup_form">
     <div class="popup_body theme_article">
     <h4 class="popup_title">Login</h4>
-      <form action="/ajax/login" method="POST" name="login_form">
+		<div id="error_login"> </div>
+      <!-- <form action="/ajax/login" method="POST" name="login_form"> -->
 				<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
         <div class="popup_field"><input type="text" name="log" id="log" placeholder="Login*" /></div>
         <div class="popup_field"><input type="password" name="pwd" id="pwd" placeholder="Password*" /></div>
@@ -182,17 +183,18 @@ function centrar() {
       <div class="popup_field register">
         <a href="#">Register</a>
       </div>
-    </form>
+    <!-- </form> -->
     </div>
-		<div id="error_registro"> </div>
+
 </div>
 <!-- /Login Acceder Form -->
-
+<script type="text/javascript" src="/js/scripts/registro.js?ver=<?= date('Y-m-d-h-i-s') ?>"></script>
 <div id="popup_register" class="popup_form">
 <div class="popup_body theme_article">
 <h4 class="popup_title">¡Regístrate!</h4>
-<div id="resultado_registrarse">HOLA </div>
-  <form action="registration_user" method="post" name="register_form">
+<div id="error_registro"></div>
+  <!--<form action="/ajax/registro" method="post" name="register_form">-->
+		<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
     <div class="popup_field"><input type="text" name="registration_username" id="registration_username" placeholder="Nombre (usuario)*" /></div>
     <div class="popup_field"><input type="text" name="registration_email" id="registration_email" placeholder="Email*" /></div>
     <div class="popup_field"><input type="password" name="registration_pwd" id="registration_pwd" placeholder="Contraseña*" /></div>
@@ -201,9 +203,8 @@ function centrar() {
     <input type="radio" name="registration_role" id="registration_role2" value="1" checked="nochecked" />
     <label class="lopd" for="registration_role2">He leído, entiendo y acepto la <a href="#">política de privacidad</a></label>
     </div>
-    <div class="popup_field popup_button"><a onclick="return Registrarse()" href="#" class="theme_button">enviar</a></div>
-
-  </form>
+    <div class="popup_field popup_button"><button onclick="return Registro()" class="theme_button">Registrarse</button></div>
+  <!--</form>-->
 </div>
 </div>
 
