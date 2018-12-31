@@ -71,7 +71,7 @@
                 <li class="sc_list_item sc_list_style_error"><span class="sc_list_icon"></span>{{ $webs[$i]['Caracteristica3'] }}</li>
               </ul>
             </div>
-            <a href="" class="more-link"> Visitar web</a>
+            <a href="{{ $webs[$i]['UrlWeb'] }}" class="more-link"> Visitar web</a>
           </div>
 
           <!-- Tags -->
