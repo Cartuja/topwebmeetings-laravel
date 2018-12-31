@@ -138,15 +138,12 @@ for ($i=0; $i < count($web); $i++) {
 										</span></span>
 											<!-- mostrar media total -->
 											<span class="criteria_mark theme_accent_bg"><?= $valoracion_total ?> </span>
-											<span class="criteria_word theme_accent_bg"> <!--<button name="votar" type="submit"> Votar </button> --> Total </span>
-
+											<span class="criteria_word theme_accent_bg"> Total </span>
 										</form> <!-- /Fin formulario estrellas -->
 											<!-- /mostrar media total -->
-
 										</div>
 									</div>
 								</div>
-								<!--<br><div id="error_votar" class="sc_infobox sc_infobox_style_error" style="display:none"></div>-->
 								<div id="resultado_votar"></div>
 								<!-- /Review author -->
 

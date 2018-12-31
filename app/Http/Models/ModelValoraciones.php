@@ -11,8 +11,8 @@ class ModelValoraciones extends Model
   //protected $primaryKey='idUsuario';
 
 
-  //const CREATED_AT = 'FechaAltaUsuario';
-  //const UPDATED_AT = 'FechaModificacionUsuario';
+  const CREATED_AT = 'FechaAltaValoracion';
+  const UPDATED_AT = 'FechaModificacionValoracion';
 
   //public $timestamps = false;
 }

@@ -27,14 +27,24 @@ class ControllerValoraciones extends Controller {
 			    }
 			    else
 			    {
-			      //$valoracion->insert(); //guardamos la valoracion
+						$nueva_valoracion = new ModelValoraciones();
+		        $nueva_valoracion->IdUsuario=$input['id_user'];
+		        $nueva_valoracion->IdWeb=$input['id_web'];
+		        $nueva_valoracion->TipoVotacion=$input['tipo_votacion'];
+		        $nueva_valoracion->ValoracionVotacion=$input['valoracion_votacion'];
+		        $nueva_valoracion->save(); //guardamos la valoracion
 			      $devuelve['ok']= 0; //Votamos
 			    }
 				}
 			}
 			else
 			{
-				//$valoracion->insert(); //guardamos la valoracion
+				$nueva_valoracion = new ModelValoraciones();
+				$nueva_valoracion->IdUsuario=$input['id_user'];
+				$nueva_valoracion->IdWeb=$input['id_web'];
+				$nueva_valoracion->TipoVotacion=$input['tipo_votacion'];
+				$nueva_valoracion->ValoracionVotacion=$input['valoracion_votacion'];
+				$nueva_valoracion->save(); //guardamos la valoracion
 				$devuelve['ok']= 0; //Votamos
 			}
 		}
