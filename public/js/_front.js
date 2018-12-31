@@ -653,7 +653,7 @@ jQuery(document).ready(function() {
 
 
 	// ----------------------- Comment form submit ----------------
-	jQuery("form#commentforma").submit(function(e) {
+	jQuery("form#commentform").submit(function(e) {
 		"use strict";
 		var error = formValidate(jQuery(this), {
 			error_message_text: THEMEREX_GLOBAL_ERROR_TEXT,	// Global error message text (if don't write in checked field)

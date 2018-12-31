@@ -25,10 +25,10 @@
 	<link rel="stylesheet" href="/css/themes/yellowlight.css" type="text/css" media="all" id="yellowlight" />
 	<link rel="stylesheet" href="/css/themes/orange.css" type="text/css" media="all" id="orange" />
 	<link rel="stylesheet" href="/css/responsive.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="/css/estrellas.css" type="text/css" media="all" />
 
 	<link rel="stylesheet" href="/js/prettyphoto/css/prettyPhoto.css" type="text/css" media="all" />
 	<link rel="stylesheet" href="/js/mediaplayer/mediaelementplayer.css" type="text/css" media="all" />
-	<link href="/css/color.css" rel="stylesheet" >
 </head>
 <body class="theme_regular puzzles_heavy reviews_5 puzzles_animations wide no-js" data-puzzlestyle="heavy">
 <div id="page" class="theme_body">
@@ -43,16 +43,6 @@
 				</div>
 				<!-- /Area Login -->
 
-				<!-- breadcrumbs -->
-				<div id="breadcrumbs_area">
-				  <ul class="breadcrumbs">
-				    <li class="home"><a href="{{ route('inicio') }}">Inicio</a></li>
-				    <li class="home"><a href="{{ route('allweb') }}">Webs</a></li>
-				    <li class="home"><a href="blog.php">Blog</a></li>
-				  </ul>
-				</div>
-				<!-- /breadcrumbs -->
-
 				<!-- Logo -->
 					<div class="logo logo_text">
 						<a href="index.html">
@@ -61,6 +51,15 @@
 					</div>
 					<!-- /Logo -->
 
+					<!-- breadcrumbs -->
+					<div id="breadcrumbs_area">
+					  <ul class="breadcrumbs">
+					    <li class="home"><a href="{{ route('inicio') }}">Inicio</a></li>
+					    <li class="home"><a href="{{ route('allweb') }}">Webs</a></li>
+					    <li class="home"><a href="blog.php">Blog</a></li>
+					  </ul>
+					</div>
+					<!-- /breadcrumbs -->
  		</div>
 		<div id="header_middle_wrapper">
 			<div id="header_middle"  >
@@ -81,22 +80,15 @@
 					</nav>
 					<!-- #main menu -->
 
-					</div>
 				</div>
 			</div>
+		</div>
 		<div id="header_middle_fixed"></div>
 	</header>
 
 	<!-- main -->
-		<div id="main" class="with_sidebar right_sidebar">
-		  <div id="main_inner" class="clearboth blog_style_excerpt">
-		    <!-- content -->
-		    <div id="content" class="content_blog" role="main" itemscope itemtype="http://schema.org/Blog">
-    			@yield('contenido')
-				</div>
-			</div>
-		</div>
-		<!-- /main -->
+		@yield('contenido')
+	<!-- /main -->
 
 	<!-- footer -->
 	<footer id="footer" class="site_footer" role="contentinfo">

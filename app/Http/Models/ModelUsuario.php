@@ -10,7 +10,6 @@ class ModelUsuario extends Model
   protected $table = 'Usuarios';
   protected $primaryKey='IdUsuario';
 
-
   //De esta manera modifica estos campos con la fecha actual del sistema
   //No es necesario llamarlos desde otro lugar
   const CREATED_AT = 'FechaAltaUsuario';

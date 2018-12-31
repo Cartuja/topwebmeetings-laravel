@@ -44,9 +44,4 @@ class ControllerPageIndex extends Controller {
 		return view('inicio', compact('webs'));
 	}
 
-	public static function OneWeb($nombre){
-		$web = ModelIndex::Where('NombreWeb', $nombre)->get();
-		return view('oneweb', compact('web'));
-	}
-
 }
