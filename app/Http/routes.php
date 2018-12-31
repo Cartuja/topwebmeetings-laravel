@@ -1,20 +1,21 @@
 <?php
 
 use App\Http\Controllers\ControllerUsuario;
+use App\Http\Controllers\ControllerPageIndex;
 
 /* Ruta Inicio */
 Route::get('/', ['as' => 'inicio', 'uses' => 'ControllerPageIndex@route']);
 
-/* Ruta Inicio con ranking para recoger las webs */
-Route::get('/ranking', 'ControllerPageIndex@AllWebs');
+/* Mandamos a la ruta '/' que es el inicio con la informacion de las webs */
+Route::get('/', 'ControllerPageIndex@Webs');
+
+Route::get('{nombre}', ['as' => ' oneweb', 'uses' => 'ControllerPageIndex@OneWeb']);
+//Route::get('/web/{nombre}/comentarios', ['as' => ' comentarios', 'uses' => 'ControllerPageComentarios@Comentarios']);
 
 //El primer meetic es el que se ve en la url
 //Route::get('meetic', ['as' => 'meetic', 'uses' => 'ControllerPageMeetic@route']);
 
-//Así se le pasa una variable por la ruta
-//Si queremos que no sea obligatorio, añadimos después del nombre una "?" y añadir valor por defecto
-// $nombre = "Isaac"
-Route::get('/web/{nombre?}', ['as' => 'web', 'uses' => 'ControllerPageAllWeb@route']);//->where('nombre', 'meetic');
+Route::get('/allweb', ['as' => 'allweb', 'uses' => 'ControllerPageAllWeb@route'])->where('nombre', 'allweb');
 
 Route::post('/ajax/login', function ()
 {

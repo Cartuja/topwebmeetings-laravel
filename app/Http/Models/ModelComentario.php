@@ -5,10 +5,11 @@ namespace App\Http\Models;
 use Illuminate\Database\Eloquent\Model;
 
 //Se basa en recoger los datos de la bdd
-class ModelAllWeb extends Model
+class ModelComentario extends Model
 {
-  protected $table = 'Webs';
-  protected $primaryKey='IdWeb';
+  protected $table = 'Comentarios';
+  protected $primaryKey='IdComentario';
+
 
   //const CREATED_AT = 'FechaAltaUsuario';
   //const UPDATED_AT = 'FechaModificacionUsuario';

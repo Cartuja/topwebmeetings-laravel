@@ -38,10 +38,15 @@ class ControllerPageIndex extends Controller {
 		return view('inicio');
 	}
 
-	public function AllWebs()
+	public function Webs()
 	{
-			$webs = ModelIndex::all();
-			return view('inicio', compact('webs'));
+		$webs = ModelIndex::all();
+		return view('inicio', compact('webs'));
+	}
+
+	public static function OneWeb($nombre){
+		$web = ModelIndex::Where('NombreWeb', $nombre)->get();
+		return view('oneweb', compact('web'));
 	}
 
 }

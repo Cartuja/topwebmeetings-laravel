@@ -57,7 +57,6 @@ class ControllerUsuario extends Controller
         $nuevo_usuario->PassUsuario=$input['pass'];
         $nuevo_usuario->EmailUsuario=$input['email'];
         $nuevo_usuario->TipoUsuario='estandar';
-        $nuevo_usuario->FechaAltaUsuario= date('Ymd');
         $nuevo_usuario->save();
       }
       else

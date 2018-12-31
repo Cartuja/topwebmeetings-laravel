@@ -47,7 +47,7 @@
 				<div id="breadcrumbs_area">
 				  <ul class="breadcrumbs">
 				    <li class="home"><a href="{{ route('inicio') }}">Inicio</a></li>
-				    <li class="home"><a href="{{ route('web') }}">Webs</a></li>
+				    <li class="home"><a href="{{ route('allweb') }}">Webs</a></li>
 				    <li class="home"><a href="blog.php">Blog</a></li>
 				  </ul>
 				</div>
@@ -74,7 +74,6 @@
 					<nav id="mainmenu_area" class="mainmenu_area theme_menu" role="navigation">
 					<ul id="mainmenu" class="sf-js-enabled">
 						<li class="lightblue"><a href="{{ route ('inicio') }}" class="sf-with-ul">Inicio<span class="sf-sub-indicator icon-right-open"></span></a></li>
-						<li class="brown"><a href="{{ route ('web') }} " class="sf-with-ul">Webs<span class="sf-sub-indicator icon-right-open"></span></a></li>
 						<li id="blob" style="width: 0px; height: 0px; left: 0px; top: 0px; background-color: rgb(187, 187, 187); opacity: 1;"></li>
 						<!--<li class="red"><a href="editarweb" class="sf-with-ul"> Editar webs <span class="sf-sub-indicator icon-right-open"></span></a></li>-->
 					</ul>
@@ -165,7 +164,7 @@ function centrar() {
     moveTo(iz,de);
 }
 </script>
-<script type="text/javascript" src="/js/scripts/login.js?ver=<?= date('Y-m-d-h-i-s') ?>"></script>
+<script type="text/javascript" src="/js/scripts/login.js?>"></script>
 <!-- Login Acceder Form -->
 <a href="#" id="toTop" class="theme_button icon-up-open-big"></a>
 <div id="popup_login" class="popup_form">
@@ -185,10 +184,9 @@ function centrar() {
       </div>
     <!-- </form> -->
     </div>
-
 </div>
 <!-- /Login Acceder Form -->
-<script type="text/javascript" src="/js/scripts/registro.js?ver=<?= date('Y-m-d-h-i-s') ?>"></script>
+<script type="text/javascript" src="/js/scripts/registro.js?>"></script>
 <div id="popup_register" class="popup_form">
 <div class="popup_body theme_article">
 <h4 class="popup_title">¡Regístrate!</h4>
