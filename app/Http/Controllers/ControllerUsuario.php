@@ -24,7 +24,6 @@ class ControllerUsuario extends Controller
 	{
 		$devuelve['ok']=0;
 
-
 		if (isset($input['log']) && isset($input['pwd']))
 		{
 			$u=ModelUsuario::Where('EmailUsuario',$input['log'])->Where('PassUsuario',$input['pwd'])->get();
@@ -42,16 +41,16 @@ class ControllerUsuario extends Controller
 	static function Registro($input)
 	{
     $devuelve['ok'] = 0;
+    //var_export($input);
 
-    var_export($input);
-
-    if(isset($input['nombre'])  && isset($input['email'])  && isset($input['pass'])  && isset($input['pass2']))
+    //$input['x'], la 'x' es el nombre de la variable que le mandamos desde el fichero js
+    if(isset($input['nombre']) && isset($input['email']) && isset($input['pass']) && isset($input['pass2']))
     {
       $existe_email = ModelUsuario::Where('EmailUsuario', $input['email'])->first();
-      if(!$existe_email)
+      //echo "EMAILS ".$input['registration_email']." // ". $existe_email['EmailUsuario'];
+      if(!$existe_email['EmailUsuario'])
       {
         $devuelve['ok'] = 1; //Devuelve que no existe en la bdd y se puede registrar
-
         //guardamos en la base de datos
         $nuevo_usuario = new ModelUsuario();
         $nuevo_usuario->NombreUsuario=$input['nombre'];
@@ -66,7 +65,6 @@ class ControllerUsuario extends Controller
         $devuelve['ok'] = 0; //Ya existe en la bdd
       }
     }
-
     return $devuelve;
 	}
 

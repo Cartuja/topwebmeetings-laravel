@@ -1,4 +1,4 @@
-@extends('principal') <!-- Extiene de principal, que contiene el head, menu, footer -->
+@extends('principal') <!-- Extiende de principal, que contiene el head, menu, footer -->
 
 @section('contenido') <!-- Aquí se va a mostrar el ranking de webs -->
   <!-- post item -->

@@ -8,9 +8,16 @@ function Registro()
   var datos =  { 'nombre':nombre, 'email':email, 'pass':pass, 'pass2':pass2, '_token':_token };
   var error = false;
 
+  //Validar email
+  var regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+  var validar_email = regex.test(email) ? true : false;
+
   if(nombre == '' || email == '' || pass == '' || pass2 == '')
   {
     jQuery('#error_registro').html("<br><div id='error_registro' class='sc_infobox sc_infobox_style_error'> Rellena todos los campos. </div>");
+    error = true;
+  } else if(!validar_email){
+    jQuery('#error_registro').html("<br><div id='error_registro' class='sc_infobox sc_infobox_style_error'> Email no valido. </div>");
     error = true;
   }
 
@@ -20,7 +27,7 @@ function Registro()
   }
 
   if(error == false){ //Si no hay errores de campos vacios, email no valido o contraseñas diferentes
-    console.log(datos); //se registra
+    //console.log(datos); //se registra
   	jQuery.ajax({
   		async: true,
   		type: "POST",
@@ -33,6 +40,7 @@ function Registro()
   		},
   		success:function(respuesta)
   		{
+        console.log(datos);
         console.log(respuesta)
         if(respuesta.ok==1)
         {

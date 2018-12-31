@@ -23,7 +23,7 @@ Route::post('/ajax/login', function ()
 
 Route::match(['get','post'],'/ajax/registro', function ()
 {
-	return json_encode(ControllerUsuario::Registro(Input::All()));
+	return response()->json(ControllerUsuario::Registro(Input::All()));
 });
 
 Route::controllers([
