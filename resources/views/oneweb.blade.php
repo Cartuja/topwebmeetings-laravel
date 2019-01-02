@@ -186,13 +186,17 @@ for ($i=0; $i < count($web); $i++) {
 										{{ $usuario }} <span class="comment_date theme_info"> {{ $fecha_comentario }} </span>
 									</h6>
 										<!-- Solo aparece este boton cuando el usuario esta con la session -->
-										<?php if($email_session)
-										{ ?>
-											<input type="hidden" name="_token" value="<?= csrf_token(); ?>">
-											<input type="hidden" name="idComent" value="<?= $id_comentario ?>">
-											<input type="hidden" name="idweb" value="<?= $id_web ?>">
-											<button name="eliminarComentario" style="float:right;" onclick="return deletComent()">Eliminar</button>
-							<?php } ?>
+							<?php if($email_session)
+										{
+											if($email_session == $email)
+											{
+												?>
+												<input type="hidden" name="_token" value="<?= csrf_token(); ?>">
+												<input type="hidden" name="id_comentario" value="<?= $id_comentario ?>">
+												<button name="eliminarComentario" style="float:right;" onclick="return deletComent()">Eliminar</button>
+							<?php
+										}
+									} ?>
 										<div class="comment_content">{{ $texto_comentario }}</div>
 			        	</li>
 								<?php } ?>

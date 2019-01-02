@@ -1,5 +1,5 @@
 function deletComent(){
-  var id_comentario=jQuery("[name=idComent]").val();
+  var id_comentario=jQuery("[name=id_comentario]").val();
   var id_web=jQuery("[name=idweb]").val();
   var _token = jQuery("[name=_token]").val();
 
