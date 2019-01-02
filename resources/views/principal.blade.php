@@ -73,7 +73,7 @@
 					<nav id="mainmenu_area" class="sidemenu_area theme_rating_bar" role="navigation">
 					<ul id="mainmenu" class="sf-js-enabled">
 						<li class="lightblue"><a href="{{ route ('inicio') }}" class="sf-with-ul">Inicio<span class="sf-sub-indicator icon-right-open"></span></a></li>
-						<li class="red"><a href="{{ route('allweb') }}" class="sf-with-ul"> Editar webs <span class="sf-sub-indicator icon-right-open"></span></a></li>
+						<li class="red"><a href="{{ route('allweb') }}" class="sf-with-ul"> All web <span class="sf-sub-indicator icon-right-open"></span></a></li>
 						<li id="blob" style="width: 0px; height: 0px; left: 0px; top: 0px; background-color: rgb(187, 187, 187); opacity: 1;"></li>
 					</ul>
 					<a href="#" class="search_link"><span class="icon-search"></span></a>
@@ -121,20 +121,20 @@
 	    </aside>
 	    <!-- #widget recent post -->
 	    <!-- widget contact form -->
+			<script type="text/javascript" src="/js/scripts/contact.js?ver=<?= date('Y-m-d-h-i-s') ?>"></script>
 	    <aside class="widget widget_text">
 	      <h3 class="widget_title theme_title">Contact form</h3>
+				<div id="resultado_contact"></div>
 	      <div class="textwidget">
 	        <div class="sc_contact_form">
-	          <form method="post">
-	            <div class="field field_name"><input type="text" id="nombre" name="username" placeholder="Nombre"></div>
-	            <div class="field field_email"><input type="text" id="emailFooter" name="email" value="<?php if(isset($_SESSION['email'])){ echo $email; }?>" <?php if(isset($_SESSION['email'])){ ?> readonly <?php } ?> placeholder="Email"></div>
-	            <div class="field field_message"><textarea id="mensaje" name="message" placeholder="Mensaje"></textarea></div>
-	            <button onclick="return contact()">Send</span></button>
-	            <div class="resultado_contact"></div>
-		          </form>
-		        </div>
-		      </div>
-		    </aside>
+						<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+            <div class="field field_name"><input type="text" id="nombre" name="username" placeholder="Nombre"></div>
+            <div class="field field_email"><input type="text" id="emailFooter" name="email" value="<?php if(isset($_SESSION['email'])){ echo $email; }?>" <?php if(isset($_SESSION['email'])){ ?> readonly <?php } ?> placeholder="Email"></div>
+            <div class="field field_message"><textarea id="mensaje" name="message" placeholder="Mensaje"></textarea></div>
+            <button onclick="return contact()" style="margin-bottom:50px;">Send</span></button>
+	        </div>
+	      </div>
+	    </aside>
 		    <!-- #widget contact form -->
 		  </div>
 		</div>
@@ -157,7 +157,7 @@ function centrar() {
 }
 </script>
 
-<script type="text/javascript" src="/js/scripts/login.js?>"></script>
+<script type="text/javascript" src="/js/scripts/login.js"></script>
 <!-- Login Acceder Form -->
 <a href="#" id="toTop" class="theme_button icon-up-open-big"></a>
 <div id="popup_login" class="popup_form">
@@ -196,6 +196,7 @@ function centrar() {
 </div>
 </div>
 
+ <script type="text/javascript" src="/js/scripts/login.js"></script>
  <script type="text/javascript" src="/js/scripts/votar.js?ver=<?= date('Y-m-d-h-i-s') ?>"></script>
  <script type="text/javascript" src="/js/scripts/addComent.js?ver=<?= date('Y-m-d-h-i-s') ?>"></script>
  <script type="text/javascript" src="/js/scripts/eliminarComentario.js?ver=<?= date('Y-m-d-h-i-s') ?>"></script>

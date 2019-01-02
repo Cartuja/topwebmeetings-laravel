@@ -4,6 +4,7 @@ use App\Http\Controllers\ControllerUsuario;
 use App\Http\Controllers\ControllerPageIndex;
 use App\Http\Controllers\ControllerValoraciones;
 use App\Http\Controllers\ControllerPageAllWeb;
+use App\Http\Controllers\ControllerContact;
 
 /* Ruta Inicio */
 Route::get('/', ['as' => 'inicio', 'uses' => 'ControllerPageIndex@route']);
@@ -36,6 +37,13 @@ Route::match(['get','post'],'/ajax/votar', function ()
 Route::match(['get','post'],'/ajax/registro', function ()
 {
 	return response()->json(ControllerUsuario::Registro(Input::All()));
+});
+//-Registro de usuarios
+
+//Registro de usuarios
+Route::match(['get','post'],'/ajax/contact', function ()
+{
+	return response()->json(ControllerContact::contact(Input::All()));
 });
 //-Registro de usuarios
 
