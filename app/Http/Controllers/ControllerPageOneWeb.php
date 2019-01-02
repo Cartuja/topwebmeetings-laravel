@@ -4,7 +4,6 @@ use Illuminate\Http\Request;
 use App\Http\Models\ModelComentario;
 use App\Http\Models\ModelIndex;
 use App\Http\Models\ModelUsuario;
-session_start();
 //Intermediario entre el modelo y las vistas
 
 class ControllerPageOneWeb extends Controller {

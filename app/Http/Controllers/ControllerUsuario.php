@@ -19,14 +19,12 @@ class ControllerUsuario extends Controller
   }
   public function desconectar()
   {
-    session_start();
     session_destroy();
     return redirect('/');
   }
 
 	static function Login($input)
 	{
-    session_start();
 		$devuelve['ok']=0;
 
 		if (isset($input['log']) && isset($input['pwd']))
@@ -55,7 +53,6 @@ class ControllerUsuario extends Controller
       //echo "EMAILS ".$input['registration_email']." // ". $existe_email['EmailUsuario'];
       if(!$existe_email['EmailUsuario'])
       {
-        session_start();
         $devuelve['ok'] = 1; //Devuelve que no existe en la bdd y se puede registrar
         $nuevo_usuario = new ModelUsuario();
         $nuevo_usuario->NombreUsuario=$input['nombre'];
