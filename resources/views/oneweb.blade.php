@@ -1,9 +1,6 @@
 @extends('principal')
 
 @section('contenido')
-<script type="text/javascript" src="/js/scripts/votar.js?ver=<?= date('Y-m-d-h-i-s') ?>"></script>
-<script type="text/javascript" src="/js/scripts/addComent.js?ver=<?= date('Y-m-d-h-i-s') ?>"></script>
-<script type="text/javascript" src="/js/scripts/eliminarComentario.js?ver=<?= date('Y-m-d-h-i-s') ?>"></script>
 <?php
 for ($i=0; $i < count($web); $i++) {
 	 $id_web = $web[$i]['IdWeb'];

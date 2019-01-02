@@ -1,65 +1,20 @@
-@extends('app')
+@extends('principal')
 
-@section('content')
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
-			<div class="panel panel-default">
-				<div class="panel-heading">Register</div>
-				<div class="panel-body">
-					@if (count($errors) > 0)
-						<div class="alert alert-danger">
-							<strong>Whoops!</strong> There were some problems with your input.<br><br>
-							<ul>
-								@foreach ($errors->all() as $error)
-									<li>{{ $error }}</li>
-								@endforeach
-							</ul>
-						</div>
-					@endif
-
-					<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/register') }}">
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-						<div class="form-group">
-							<label class="col-md-4 control-label">Name</label>
-							<div class="col-md-6">
-								<input type="text" class="form-control" name="name" value="{{ old('name') }}">
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label class="col-md-4 control-label">E-Mail Address</label>
-							<div class="col-md-6">
-								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label class="col-md-4 control-label">Password</label>
-							<div class="col-md-6">
-								<input type="password" class="form-control" name="password">
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label class="col-md-4 control-label">Confirm Password</label>
-							<div class="col-md-6">
-								<input type="password" class="form-control" name="password_confirmation">
-							</div>
-						</div>
-
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								<button type="submit" class="btn btn-primary">
-									Register
-								</button>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
+@section('contenido')
+<div id="popup_register" class="popup_form">
+<div class="popup_body theme_article">
+<h4 class="popup_title">¡Regístrate!</h4>
+<div id="error_registro"></div>
+		<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+    <div class="popup_field"><input type="text" name="registration_username" id="registration_username" placeholder="Nombre (usuario)*" /></div>
+    <div class="popup_field"><input type="text" name="registration_email" id="registration_email" placeholder="Email*" /></div>
+    <div class="popup_field"><input type="password" name="registration_pwd" id="registration_pwd" placeholder="Contraseña*" /></div>
+    <div class="popup_field"><input type="password" name="registration_pwd2" id="registration_pwd2" placeholder="Confirma contraseña*" /><br><br></div>
+    <div class="popup_field theme_info registration_role"><h6>Política de privacidad:</h6>
+    <input type="radio" name="registration_role" id="registration_role2" value="1" checked="nochecked" />
+    <label class="lopd" for="registration_role2">He leído, entiendo y acepto la <a href="#">política de privacidad</a></label>
+    </div>
+    <div class="popup_field popup_button"><button onclick="return Registro()" class="theme_button">Registrarse</button></div>
+</div>
 </div>
 @endsection

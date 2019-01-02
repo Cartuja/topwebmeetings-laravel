@@ -56,7 +56,7 @@
 .theme_regular a.comment-reply-link,
 .theme_regular .theme_button {
 	background:#666666;
-	color:#ffffff;	
+	color:#ffffff;
 	-webkit-transition: all ease .2s;
 	-moz-transition: all ease .2s;
 	-ms-transition: all ease .2s;
@@ -71,7 +71,7 @@
 .theme_regular a.theme_accent_bg:hover,
 .theme_regular .theme_hover {
 	background:#bbbbbb;
-	color:#ffffff;	
+	color:#ffffff;
 }
 
 /* Border color */
@@ -159,7 +159,7 @@
 	.theme_regular #mainmenu > li ul li a:hover,
 	.theme_regular #mainmenu > li ul li.sfHover > a {
 		background:#bbbbbb;
-		color:#ffffff;	
+		color:#ffffff;
 	}
 	/* Side menu */
 	.theme_regular #sidemenu_area li a {
@@ -188,13 +188,13 @@
 .theme_regular .nav_comments a,
 .theme_regular .nav_comments > span {
 	background:#666666;
-	color:#ffffff;	
+	color:#ffffff;
 }
 .theme_regular #nav_pages li a:hover,
 .theme_regular .nav_pages_parts a:hover,
 .theme_regular .nav_comments a:hover {
 	background:#bbbbbb;
-	color:#ffffff;	
+	color:#ffffff;
 }
 .theme_regular #nav_pages li.pager_current span,
 .theme_regular #nav_pages li.pager_current a,
@@ -202,14 +202,14 @@
 .theme_regular .nav_pages_parts > span.page_num,
 .theme_regular .nav_comments span {
 	background:#00a0db;
-	color:#ffffff;	
+	color:#ffffff;
 }
 .theme_regular .nav_pages_parts > span.pages {
 	background:none;
 	filter:none;
 	border:none;
 }
-.theme_regular #nav_pages .pager_pages span {	
+.theme_regular #nav_pages .pager_pages span {
 	background:none;
 	filter:none;
 	border-color:transparent;
@@ -235,7 +235,7 @@
 	border-color:transparent;
 	border-width:0;
 	background:#666666;
-	color:#ffffff;	
+	color:#ffffff;
 	-webkit-transition: all ease .2s;
 	-moz-transition: all ease .2s;
 	-ms-transition: all ease .2s;
@@ -256,7 +256,7 @@
 .theme_regular input[type="reset"]:hover,
 .theme_regular input[type="submit"]:hover {
 	background:#bbbbbb;
-	color:#ffffff;	
+	color:#ffffff;
 }
 .theme_regular #buddypress .button:focus,
 .theme_regular #buddypress .generic-button a:focus,
@@ -275,7 +275,7 @@
 .theme_regular input[type="reset"]:active,
 .theme_regular input[type="submit"]:active {
 	background:#bbbbbb;
-	color:#ffffff;	
+	color:#ffffff;
 }
 .theme_regular #buddypress form textarea,
 .theme_regular #buddypress form#whats-new-form textarea,
@@ -365,7 +365,7 @@
 }
 .theme_regular .widget.widget_calendar table tbody #today,
 .theme_regular .widget.widget_calendar table tbody #today a {
-	color:#ffffff;	
+	color:#ffffff;
 	background:#e0e0e0;
 }
 
@@ -537,7 +537,7 @@
 }
 
 /* Table */
-.theme_regular .sc_table table td, 
+.theme_regular .sc_table table td,
 .theme_regular .sc_table table th {
 	border-color: #e0e0e0;
 	background: #ffffff;
@@ -553,7 +553,7 @@
 /* Tabs */
 .theme_regular .ui-tabs-active .theme_button {
 	background:#00bcff;
-	color:#ffffff;	
+	color:#ffffff;
 }
 .theme_regular .sc_tabs .content {
 	background: #fff;
@@ -634,8 +634,3 @@
 .theme_regular .popup_form .popup_title .popup_arrow:after {
 	border-bottom-color: #00a0db;
 }
-
-
-
-
-

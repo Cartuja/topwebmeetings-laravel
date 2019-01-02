@@ -1,6 +1,11 @@
 @extends('principal') <!-- Extiende de principal, que contiene el head, menu, footer -->
 
 @section('contenido') <!-- Aquí se va a mostrar el ranking de webs -->
+<style>
+  #articulo_hover:hover{
+    background-color: rgb(236, 230, 179);
+  }
+</style>
 <div id="main" class="with_sidebar right_sidebar">
   <div id="main_inner" class="clearboth blog_style_excerpt">
     <!-- content -->
@@ -21,13 +26,13 @@
           $nombre_web = $webs[$i]['NombreWeb'];
       ?>
       <?php if($i == 0){ ?>
-      <article class="theme_article instock theme_yellowlight">
+      <article class="theme_article instock theme_yellowlight" id="articulo_hover">
       <?php } else { ?>
-      <article class="theme_article instock">
+      <article class="theme_article instock" id="articulo_hover">
       <?php } ?>
         <div class="post_thumb image_wrapper no_thumb" style="width: 320px;">
           <a href='{{url($nombre_web)}}'>
-            <div class="sc_slider sc_slider_flex">
+            <div class="sc_slider sc_slider_flex" style="margin-top:30px;">
               <ul class="slides">
                 <li><img style="margin-top: 50px;padding:5px;" alt="{{ $nombre_web }}" src="{{ $webs[$i]['LogoWebs'] }}"></li>
               </ul>

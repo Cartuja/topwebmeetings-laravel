@@ -13,14 +13,13 @@ use Illuminate\Http\Request;
 
 class ControllerUsuario extends Controller
 {
-
   function Obtener1Usuario($id_usuario)
   {
     $usuario=ModelUsuario::where('id',1)->get();
     return $usuario;
   }
 
-	static function Login($input)
+	static function Login(Request $request,$input)
 	{
 		$devuelve['ok']=0;
 
@@ -29,7 +28,9 @@ class ControllerUsuario extends Controller
 			$u=ModelUsuario::Where('EmailUsuario',$input['log'])->Where('PassUsuario',$input['pwd'])->get();
 			if ($u->count()>0)
 			{
-				$devuelve['ok']=1;
+        $headers = apache_request_headers();
+        $payload = $request->header('XSRF-TOKEN');
+				$devuelve['ok']=$payload;
 			}
 			else
 				$devuelve['ok']=0;

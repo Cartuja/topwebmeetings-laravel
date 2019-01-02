@@ -38,7 +38,7 @@
 			<div id="header_top_inner">
 				<!-- Area login -->
 				<div id="login_area">
-					<a href="#" class="link_login icon-login-1 theme_accent_bg" title="Login"></a>
+					<a href="/login" class="link_login icon-login-1 theme_accent_bg" title="Login"></a>
 					<a href="#" class="link_register icon-key theme_accent_bg" title="Register"></a>
 				</div>
 				<!-- /Area Login -->
@@ -55,7 +55,7 @@
 					<div id="breadcrumbs_area">
 					  <ul class="breadcrumbs">
 					    <li class="home"><a href="{{ route('inicio') }}">Inicio</a></li>
-					    <li class="home"><a href="{{ route('allweb') }}">Webs</a></li>
+					    <li class="home"><a href="">Webs</a></li>
 					    <li class="home"><a href="blog.php">Blog</a></li>
 					  </ul>
 					</div>
@@ -70,11 +70,11 @@
 					</div>
 
 					<!-- main menu -->
-					<nav id="mainmenu_area" class="mainmenu_area theme_menu" role="navigation">
+					<nav id="mainmenu_area" class="sidemenu_area theme_rating_bar" role="navigation">
 					<ul id="mainmenu" class="sf-js-enabled">
 						<li class="lightblue"><a href="{{ route ('inicio') }}" class="sf-with-ul">Inicio<span class="sf-sub-indicator icon-right-open"></span></a></li>
+						<li class="red"><a href="{{ route('allweb') }}" class="sf-with-ul"> Editar webs <span class="sf-sub-indicator icon-right-open"></span></a></li>
 						<li id="blob" style="width: 0px; height: 0px; left: 0px; top: 0px; background-color: rgb(187, 187, 187); opacity: 1;"></li>
-						<!--<li class="red"><a href="editarweb" class="sf-with-ul"> Editar webs <span class="sf-sub-indicator icon-right-open"></span></a></li>-->
 					</ul>
 					<a href="#" class="search_link"><span class="icon-search"></span></a>
 					</nav>
@@ -156,6 +156,7 @@ function centrar() {
     moveTo(iz,de);
 }
 </script>
+
 <script type="text/javascript" src="/js/scripts/login.js?>"></script>
 <!-- Login Acceder Form -->
 <a href="#" id="toTop" class="theme_button icon-up-open-big"></a>
@@ -163,7 +164,6 @@ function centrar() {
     <div class="popup_body theme_article">
     <h4 class="popup_title">Login</h4>
 		<div id="error_login"> </div>
-      <!-- <form action="/ajax/login" method="POST" name="login_form"> -->
 				<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
         <div class="popup_field"><input type="text" name="log" id="log" placeholder="Login*" /></div>
         <div class="popup_field"><input type="password" name="pwd" id="pwd" placeholder="Password*" /></div>
@@ -174,16 +174,15 @@ function centrar() {
       <div class="popup_field register">
         <a href="#">Register</a>
       </div>
-    <!-- </form> -->
     </div>
 </div>
 <!-- /Login Acceder Form -->
+
 <script type="text/javascript" src="/js/scripts/registro.js?>"></script>
 <div id="popup_register" class="popup_form">
 <div class="popup_body theme_article">
 <h4 class="popup_title">¡Regístrate!</h4>
 <div id="error_registro"></div>
-  <!--<form action="/ajax/registro" method="post" name="register_form">-->
 		<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
     <div class="popup_field"><input type="text" name="registration_username" id="registration_username" placeholder="Nombre (usuario)*" /></div>
     <div class="popup_field"><input type="text" name="registration_email" id="registration_email" placeholder="Email*" /></div>
@@ -194,10 +193,12 @@ function centrar() {
     <label class="lopd" for="registration_role2">He leído, entiendo y acepto la <a href="#">política de privacidad</a></label>
     </div>
     <div class="popup_field popup_button"><button onclick="return Registro()" class="theme_button">Registrarse</button></div>
-  <!--</form>-->
 </div>
 </div>
 
+ <script type="text/javascript" src="/js/scripts/votar.js?ver=<?= date('Y-m-d-h-i-s') ?>"></script>
+ <script type="text/javascript" src="/js/scripts/addComent.js?ver=<?= date('Y-m-d-h-i-s') ?>"></script>
+ <script type="text/javascript" src="/js/scripts/eliminarComentario.js?ver=<?= date('Y-m-d-h-i-s') ?>"></script>
  <script type="text/javascript" src="/js/jquery/jquery.js"></script>
  <script type="text/javascript" src="/js/jquery/jquery-migrate.min.js?ver2=<?= date('Ymdhis') ?>"></script>
  <script type="text/javascript" src="/js/jquery/ui/jquery-ui-1.10.4.custom.js"></script>

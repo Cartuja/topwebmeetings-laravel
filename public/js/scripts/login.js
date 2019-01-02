@@ -25,7 +25,7 @@ function Login()
   		},
   		success:function(respuesta)
   		{
-      //  console.log(respuesta)
+        console.log(respuesta)
         if(respuesta.ok==1) //Si existe en la bdd
         {
           location.reload();

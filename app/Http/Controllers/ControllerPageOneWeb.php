@@ -13,7 +13,9 @@ class ControllerPageOneWeb extends Controller {
 		$web = ModelIndex::Where('NombreWeb', $nombre)->get();
 		$comentarios = ModelComentario::Where('Idweb', $web[0]['IdWeb'])->get();
 		$usuarios = ModelUsuario::all();
-		return view('oneweb', compact('web'), compact('comentarios'), compact('usuarios'));
+		return view('oneweb', ['web' => $web,
+													'comentarios' => $comentarios,
+												 	'usuarios' => $usuarios ]);
 	}
 
 }
