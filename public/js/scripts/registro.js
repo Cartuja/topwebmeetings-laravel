@@ -44,7 +44,8 @@ function Registro()
         console.log(respuesta)
         if(respuesta.ok==1)
         {
-          jQuery('#error_registro').html("<br><div id='error_registro' class='sc_infobox sc_infobox_style_success'> Te has registrado. </div>");
+          location.reload(); //Cuando se registra, directamente accede a la web
+          //jQuery('#error_registro').html("<br><div id='error_registro' class='sc_infobox sc_infobox_style_success'> Te has registrado. </div>");
         }
         else
         {

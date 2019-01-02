@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en-US">
 <head>
 	<meta charset="UTF-8" />
@@ -37,9 +37,23 @@
 			<div class="top_line theme_accent_bg"></div>
 			<div id="header_top_inner">
 				<!-- Area login -->
+				<?php
+					if(isset($_SESSION['session_email'])){
+						$email_session =  $_SESSION['session_email'];
+					} else{
+						$email_session = '';
+					}
+				?>
 				<div id="login_area">
-					<a href="/login" class="link_login icon-login-1 theme_accent_bg" title="Login"></a>
-					<a href="#" class="link_register icon-key theme_accent_bg" title="Register"></a>
+					<?php if($email_session){ ?>
+						<form action="{{ route('desconectar') }}" method="POST" name="form_desconectar">
+							<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+							<button type="submit" name="desconectar" class="icon-off" title="desconectar"></button>
+						</form>
+				<?php } else { ?>
+						<a href="#" class="link_login icon-login-1 theme_accent_bg" title="Login"></a>
+						<a href="#" class="link_register icon-key theme_accent_bg" title="Register"></a>
+				<?php } ?>
 				</div>
 				<!-- /Area Login -->
 
@@ -129,7 +143,7 @@
 	        <div class="sc_contact_form">
 						<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
             <div class="field field_name"><input type="text" id="nombre" name="username" placeholder="Nombre"></div>
-            <div class="field field_email"><input type="text" id="emailFooter" name="email" value="<?php if(isset($_SESSION['email'])){ echo $email; }?>" <?php if(isset($_SESSION['email'])){ ?> readonly <?php } ?> placeholder="Email"></div>
+            <div class="field field_email"><input type="text" id="emailFooter" name="email" value="<?php if(isset($_SESSION['session_email'])){ echo $email_session; }?>" <?php if(isset($_SESSION['email'])){ ?> readonly <?php } ?> placeholder="Email"></div>
             <div class="field field_message"><textarea id="mensaje" name="message" placeholder="Mensaje"></textarea></div>
             <button onclick="return contact()" style="margin-bottom:50px;">Send</span></button>
 	        </div>
@@ -157,7 +171,6 @@ function centrar() {
 }
 </script>
 
-<script type="text/javascript" src="/js/scripts/login.js"></script>
 <!-- Login Acceder Form -->
 <a href="#" id="toTop" class="theme_button icon-up-open-big"></a>
 <div id="popup_login" class="popup_form">
@@ -178,7 +191,7 @@ function centrar() {
 </div>
 <!-- /Login Acceder Form -->
 
-<script type="text/javascript" src="/js/scripts/registro.js?>"></script>
+<script type="text/javascript" src="/js/scripts/registro.js?ver=<?php date('Ymdhis') ?>>"></script>
 <div id="popup_register" class="popup_form">
 <div class="popup_body theme_article">
 <h4 class="popup_title">¡Regístrate!</h4>

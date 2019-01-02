@@ -2,6 +2,12 @@
 
 @section('contenido')
 <?php
+if(isset($_SESSION['session_email'])){
+	$email_session =  $_SESSION['session_email'];
+} else{
+	$email_session = '';
+}
+
 for ($i=0; $i < count($web); $i++) {
 	 $id_web = $web[$i]['IdWeb'];
    $nombre_web = $web[$i]['NombreWeb'];
@@ -44,7 +50,7 @@ for ($i=0; $i < count($web); $i++) {
 			                  <p class="clasificar">
 													<input type="hidden" name="id_usuario" value="<?= $idUser ?>">
 			                    <input type="hidden" name="idweb" value="<?= $id_web ?>">
-													<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+													<input type="hidden" name="_token" value="<?= csrf_token(); ?>">
 			                    <input id="radio1a" type="radio" name="valoracion_votacion" value="5" onclick="return Votar('diseno')" >
 			                    <label for="radio1a">★</label>
 			                    <input id="radio2a" type="radio" name="valoracion_votacion" value="4" onclick="return Votar('diseno')" >
@@ -166,6 +172,7 @@ for ($i=0; $i < count($web); $i++) {
 							<ol class="comment-list">
 								<?php
 									for ($i=0; $i < count($comentarios) ; $i++) {
+										$id_comentario = $comentarios[$i]['IdComentario'];
 										$usuario = $comentarios[$i]['Usuario'];
 										$texto_comentario = $comentarios[$i]['TextoComentario'];
 										$fecha_comentario = $comentarios[$i]['FechaComentario'];
@@ -178,14 +185,18 @@ for ($i=0; $i < count($web); $i++) {
 									<h6 class="comment_title theme_subtitle">
 										{{ $usuario }} <span class="comment_date theme_info"> {{ $fecha_comentario }} </span>
 									</h6>
-										<!--<form action='' method="POST" name="form_eliminar">
-											<input type="hidden" name="idComent" value="">
-											<input type="hidden" name="idweb" value="">
+										<!-- Solo aparece este boton cuando el usuario esta con la session -->
+										<?php if($email_session)
+										{ ?>
+											<input type="hidden" name="_token" value="<?= csrf_token(); ?>">
+											<input type="hidden" name="idComent" value="<?= $id_comentario ?>">
+											<input type="hidden" name="idweb" value="<?= $id_web ?>">
 											<button name="eliminarComentario" style="float:right;" onclick="return deletComent()">Eliminar</button>
-										</form>-->
+							<?php } ?>
 										<div class="comment_content">{{ $texto_comentario }}</div>
 			        	</li>
 								<?php } ?>
+									<div id="resultado_eliminar_comentario"></div>
 			        </ol>
 						</div>
 						<div id="resultado_eliminar"></div>
@@ -194,15 +205,16 @@ for ($i=0; $i < count($web); $i++) {
 							<div id="respond" class="comment-respond">
 								<h3 id="reply-title">Introduce un comentario </h3>
 								<form action="" method="POST" name="form_comentario" id="commentform">
-									<input type="hidden" name="idWeb" value="">
+									<input type="hidden" name="idWeb" value="<?= $id_web ?>">
+									<input type="hidden" name="_token" value="<?= csrf_token() ?>">
 									<p class="comment-form-author">
 										<label for="author" class="required">Name<span class="required"> (required)</span></label>
 										<input id="author" name="author" type="text" value="" size="30" aria-required='true' />
 									</p>
 									<p class="comment-form-email">
-												<input type="hidden" name="idUsuario" value="">
-												<label for="email" class="required">Email<span class="required"> (required)</span></label>
-												<input id="email" name="email" type="text" value="" size="30" aria-required='true' />
+										<input type="hidden" name="idUsuario" value="">
+										<label for="email" class="required">Email<span class="required"> (required)</span></label>
+										<input id="email" name="email" type="text" value="<?= $email_session ?>" size="30" aria-required='true' />
 									</p>
 									<p class="comment-form-comment">
 										<label for="comment" class="required">Your Message<span class="required"> (required)</span></label>
@@ -215,7 +227,7 @@ for ($i=0; $i < count($web); $i++) {
 							</div><!-- #respond -->
 						</div>
 					</div><!-- #comments form -->
-					<div id="resultado_comentario"></div>
+					<div id="resultado_añadir_comentario"></div>
 					<!-- /Recoger comentarios usuarios -->
 				</div>
 			</div>

@@ -6,7 +6,7 @@ function Login()
   var _token = jQuery("[name=_token]").val();
 
   var datos = {'log':log, 'pwd':pwd, '_token':_token}
-
+  console.log(datos);
   if(log == "" || pwd == "")
   {
     jQuery('#error_login').html("<br><div id='error_registro' class='sc_infobox sc_infobox_style_error'> Rellena todos los campos. </div>");
@@ -25,7 +25,7 @@ function Login()
   		},
   		success:function(respuesta)
   		{
-        console.log(respuesta)
+        //console.log(respuesta)
         if(respuesta.ok==1) //Si existe en la bdd
         {
           location.reload();

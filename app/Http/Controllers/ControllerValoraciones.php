@@ -1,13 +1,14 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Http\Models\ModelValoraciones;
+use App\Http\Models\ModelComentario;
 
 //Intermediario entre el modelo y las vistas
 
 class ControllerValoraciones extends Controller {
 
-	static function Votar($input){
+	static function Votar($input)
+	{
 		$valoraciones_bdd = ModelValoraciones::all();
 		$devuelve['ok'] = 0;
 		if(isset($input['id_web']) && isset($input['valoracion_votacion']) && isset($input['tipo_votacion']) && isset($input['id_user']))
@@ -33,7 +34,7 @@ class ControllerValoraciones extends Controller {
 		        $nueva_valoracion->TipoVotacion=$input['tipo_votacion'];
 		        $nueva_valoracion->ValoracionVotacion=$input['valoracion_votacion'];
 		        $nueva_valoracion->save(); //guardamos la valoracion
-			      $devuelve['ok']= 0; //Votamos
+			      $devuelve['ok']= 1; //Votamos
 			    }
 				}
 			}
@@ -45,7 +46,7 @@ class ControllerValoraciones extends Controller {
 				$nueva_valoracion->TipoVotacion=$input['tipo_votacion'];
 				$nueva_valoracion->ValoracionVotacion=$input['valoracion_votacion'];
 				$nueva_valoracion->save(); //guardamos la valoracion
-				$devuelve['ok']= 0; //Votamos
+				$devuelve['ok']= 1; //Votamos
 			}
 		}
 		return $devuelve;

@@ -1,18 +1,39 @@
 function deletComent(){
-  var idComent=jQuery("[name=idComent]").val();
-  var idweb=jQuery("[name=idweb]").val();
+  var id_comentario=jQuery("[name=idComent]").val();
+  var id_web=jQuery("[name=idweb]").val();
+  var _token = jQuery("[name=_token]").val();
 
-  var datos = { 'idComent':idComent, 'idweb':idweb};
-	console.log(datos);
-  if(datos){
+  var datos = { 'id_comentario':id_comentario, 'id_web':id_web, '_token':_token};
+	//console.log(datos);
+  if(datos)
+  {
     jQuery.ajax({
-      type: "POST",
-      url: "../../ajax/DeletComent.php",
-      dataType: "json",
-      data: datos,
-    }).done(function(respuesta) {
-      jQuery("#resultado_eliminar").html(respuesta.html);
-    });
+  		async: true,
+  		type: "POST",
+  		dataType: "json",
+  		contentType: "application/x-www-form-urlencoded",
+  		url: "/ajax/deleteComent",
+  		data: datos,
+  		beforeSend:function()
+  		{
+  		},
+      success:function(respuesta)
+  		{
+        //console.log(respuesta)
+        if(respuesta.ok==1) //Si se elimina
+        {
+          jQuery('#resultado_eliminar_comentario').html("<br><div id='error_login' class='sc_infobox sc_infobox_style_success'> Has eliminado el comentario </div>");
+        }
+        else {
+          jQuery('#resultado_eliminar_comentario').html("<br><div id='error_login' class='sc_infobox sc_infobox_style_error'> No se ha podido eliminar el comentario </div>");
+        }
+  		},
+      timeout:3000,
+  		error:function(error)
+  		{
+  			jQuery('#error_login').html("<br><div id='error_login' class='sc_infobox sc_infobox_style_error'> Internal Server Error </div>");
+  		}
+  	});
   }
-  return false; //siempre
-}
+  return false;
+};

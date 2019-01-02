@@ -32,9 +32,6 @@ function editweb(){
         jQuery("#div_url_web").html("<div style='width: 50%;' class='sc_infobox sc_infobox_style_error'> La url no es valida. </div>")
     }
   }
-
-
-
-
+  
   return false;
 }

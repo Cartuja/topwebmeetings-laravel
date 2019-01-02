@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Foundation\Bus\DispatchesCommands;
@@ -18,9 +17,16 @@ class ControllerUsuario extends Controller
     $usuario=ModelUsuario::where('id',1)->get();
     return $usuario;
   }
+  public function desconectar()
+  {
+    session_start();
+    session_destroy();
+    return redirect('/');
+  }
 
-	static function Login(Request $request,$input)
+	static function Login($input)
 	{
+    session_start();
 		$devuelve['ok']=0;
 
 		if (isset($input['log']) && isset($input['pwd']))
@@ -28,14 +34,12 @@ class ControllerUsuario extends Controller
 			$u=ModelUsuario::Where('EmailUsuario',$input['log'])->Where('PassUsuario',$input['pwd'])->get();
 			if ($u->count()>0)
 			{
-        $headers = apache_request_headers();
-        $payload = $request->header('XSRF-TOKEN');
-				$devuelve['ok']=$payload;
+				$devuelve['ok']=1;
+        $_SESSION['session_email'] = $input['log'];
 			}
 			else
 				$devuelve['ok']=0;
 		}
-
 		return $devuelve;
 	}
 
@@ -51,14 +55,17 @@ class ControllerUsuario extends Controller
       //echo "EMAILS ".$input['registration_email']." // ". $existe_email['EmailUsuario'];
       if(!$existe_email['EmailUsuario'])
       {
+        session_start();
         $devuelve['ok'] = 1; //Devuelve que no existe en la bdd y se puede registrar
-        //guardamos en la base de datos
         $nuevo_usuario = new ModelUsuario();
         $nuevo_usuario->NombreUsuario=$input['nombre'];
         $nuevo_usuario->PassUsuario=$input['pass'];
         $nuevo_usuario->EmailUsuario=$input['email'];
         $nuevo_usuario->TipoUsuario='estandar';
-        $nuevo_usuario->save();
+        $nuevo_usuario->save(); //guardamos en la base de datos
+
+        //creamos la session del Registro
+        $_SESSION['session_email'] = $input['email'];
       }
       else
       {

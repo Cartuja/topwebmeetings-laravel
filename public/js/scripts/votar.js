@@ -22,8 +22,8 @@ function Votar(tipo_votacion)
   		},
   		success:function(respuesta)
   		{
-      //  console.log(respuesta)
-        if(respuesta.ok==0) //Si existe en la bdd
+        console.log(respuesta)
+        if(respuesta.ok==1) //Si existe en la bdd
         {
           jQuery('#resultado_votar').html("<br><div id='error_votar' class='sc_infobox sc_infobox_style_success'> ¡Has votado! </div>");
         }

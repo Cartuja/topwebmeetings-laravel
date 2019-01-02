@@ -11,8 +11,8 @@ class ModelComentario extends Model
   protected $primaryKey='IdComentario';
 
 
-  //const CREATED_AT = 'FechaAltaUsuario';
-  //const UPDATED_AT = 'FechaModificacionUsuario';
+  const CREATED_AT = 'FechaAltaComentario';
+  const UPDATED_AT = 'FechaModificacionComentario';
 
   //public $timestamps = false;
 }
