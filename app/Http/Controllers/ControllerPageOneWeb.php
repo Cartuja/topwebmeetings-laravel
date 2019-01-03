@@ -32,13 +32,15 @@ class ControllerPageOneWeb extends Controller {
 		{
 			if(trim($input['nombre']) != '' && trim($input['email']) != '' && trim($input['coment']) != '')
 			{
+				//Recoger id usuario
+				$id_usuario = ModelUsuario::Where('EmailUsuario', $input['email'])->get();
 				$devuelve['ok']=2; //Devuelve que no existe en la bdd y se puede registrar
 				$nuevo_comentario = new ModelComentario();
 				$nuevo_comentario->Usuario=$input['nombre'];
 				$nuevo_comentario->TextoComentario=$input['coment'];
 				$nuevo_comentario->Email=$input['email'];
 				$nuevo_comentario->Idweb=$input['id_web'];
-				$nuevo_comentario->IdUsuario=$input['id_usuario'];
+				$nuevo_comentario->IdUsuario=$id_usuario[0]['IdUsuario'];
 				$nuevo_comentario->save(); //guardamos en la base de datos
 			}
 			else

@@ -22,13 +22,13 @@ Route::get('/{nombre}', 'ControllerPageOneWeb@Web');
 //Route::post('{nombre}/comentarios', 'ControllerPageOneWeb@Web');
 
 //Eliminar comentario
-Route::match(['get','post'], '/ajax/deleteComent', function(){
+Route::post('/ajax/deleteComent', function(){
 	return response()->json(ControllerPageOneWeb::deleteComent(Input::All()));
 });
 //-Eliminar comentario
 
 //Añadir comentario
-Route::match(['get','post'],'/ajax/addComent', function(){
+Route::match(['get', 'post'], '/ajax/addComent', function(){
 	return response()->json(ControllerPageOneWeb::addComent(Input::All()));
 });
 //-Añadir comentario
@@ -54,12 +54,12 @@ Route::post('/ajax/registro', function ()
 });
 //-Registro de usuarios
 
-//Registro de usuarios
-Route::match(['get','post'],'/ajax/contact', function ()
+//Contact footer
+Route::post('/ajax/contact', function ()
 {
 	return response()->json(ControllerContact::contact(Input::All()));
 });
-//-Registro de usuarios
+//-Contact footer
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

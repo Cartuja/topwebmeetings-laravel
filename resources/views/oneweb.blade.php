@@ -38,17 +38,12 @@ for ($i=0; $i < count($web); $i++) {
 									<li><a href="#reviews_author" class="theme_button">Valoracion</a></li>
 								</ul>
 								<!-- Review author -->
-								<?php
-									//$idUsuario = controller_usuarios::getIdUser($email);
-									$idUser = 0;
-								?>
 								<div id="reviews_author" class="reviews_tab reviews_author">
 									<div class="reviews_data">
 										<div class="criteria_row theme_field">
 											<span class="criteria_label theme_strong">Diseño web</span>
 											<form method="POST" name="form_estrellas1" id="form_estrellas1" action=''>
 			                  <p class="clasificar">
-													<input type="hidden" name="id_usuario" value="<?= $idUser ?>">
 			                    <input type="hidden" name="idweb" value="<?= $id_web ?>">
 													<input type="hidden" name="_token" value="<?= csrf_token(); ?>">
 			                    <input id="radio1a" type="radio" name="valoracion_votacion" value="5" onclick="return Votar('diseno')" >
@@ -66,7 +61,6 @@ for ($i=0; $i < count($web); $i++) {
 										<div class="criteria_row theme_field">
 											<span class="criteria_label theme_strong">Registro web</span>
 												<p class="clasificar">
-													<input type="hidden" name="id_usuario" value="<?= $idUser ?>">
 													<input type="hidden" name="idweb" value="<?= $id_web ?>">
 													<input id="radio1b" type="radio" name="valoracion_votacion" value="5" onclick="return Votar('registro')">
 													<label for="radio1b">★</label>
@@ -83,7 +77,6 @@ for ($i=0; $i < count($web); $i++) {
 										<div class="criteria_row theme_field">
 											<span class="criteria_label theme_strong">Perfil web</span>
 												<p class="clasificar">
-													<input type="hidden" name="id_usuario" value="<?= $idUser ?>">
 													<input type="hidden" name="idweb" value="<?= $id_web ?>">
 													<input id="radio1c" type="radio" name="valoracion_votacion" value="5" onclick="return Votar('perfil')">
 													<label for="radio1c">★</label>
@@ -100,7 +93,6 @@ for ($i=0; $i < count($web); $i++) {
 										<div class="criteria_row theme_field">
 											<span class="criteria_label theme_strong">Características web</span>
 												<p class="clasificar">
-													<input type="hidden" name="id_usuario" value="<?= $idUser ?>">
 													<input type="hidden" name="idweb" value="<?= $id_web ?>">
 													<input id="radio1d" type="radio" name="valoracion_votacion" value="5" onclick="return Votar('caracteristicas')">
 													<label for="radio1d">★</label>
@@ -117,7 +109,6 @@ for ($i=0; $i < count($web); $i++) {
 										<div class="criteria_row theme_field">
 												<span class="criteria_label theme_strong">Atención web</span>
 												<p class="clasificar">
-													<input type="hidden" name="id_usuario" value="<?= $idUser ?>">
 													<input type="hidden" name="idweb" value="<?= $id_web ?>">
 													<input id="radio1e" type="radio" name="valoracion_votacion" value="5" onclick="return Votar('atencion')">
 													<label for="radio1e">★</label>
@@ -205,6 +196,16 @@ for ($i=0; $i < count($web); $i++) {
 						</div>
 						<div id="resultado_eliminar"></div>
 						<!-- #comments -->
+						<!-- Recoger nombre usuario -->
+						<?php
+							$id_usuario = "";
+							for ($i=0; $i < count($usuarios) ; $i++) {
+								if($email_session == $usuarios[$i]['EmailUsuario']){
+									$nombre = $usuarios[$i]['NombreUsuario'];
+								}
+							}
+						?>
+						<!-- /Recoger nombre usuario -->
 						<div class="post_comments_form theme_article">
 							<div id="respond" class="comment-respond">
 								<h3 id="reply-title">Introduce un comentario </h3>
@@ -213,7 +214,7 @@ for ($i=0; $i < count($web); $i++) {
 									<input type="hidden" name="_token" value="<?= csrf_token() ?>">
 									<p class="comment-form-author">
 										<label for="author" class="required">Name<span class="required"> (required)</span></label>
-										<input id="author" name="author" type="text" value="<?php if($email_session) { echo $usuario; } ?>" size="30" aria-required='true' <?php if($email_session) { ?> readonly <?php } ?> />
+										<input id="author" name="author" type="text" value="<?php if($email_session) { echo $nombre; } ?>" size="30" aria-required='true' <?php if($email_session) { ?> readonly <?php } ?> />
 									</p>
 									<p class="comment-form-email">
 										<input type="hidden" name="idUsuario" value="">

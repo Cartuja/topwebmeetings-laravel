@@ -1,5 +1,4 @@
 function addComent(){
-  var id_usuario=jQuery("[name=idUsuario]").val();
   var id_web=jQuery("[name=idWeb]").val();
   var nombre=jQuery("[name=author]").val();
   var email=jQuery("[name=email]").val();
@@ -7,7 +6,7 @@ function addComent(){
   var _token = jQuery("[name=_token]").val();
   var error = false;
 
-  var datos = { 'id_usuario':id_usuario, 'id_web':id_web, 'nombre':nombre, 'email':email, 'coment':coment, '_token':_token };
+  var datos = { 'id_web':id_web, 'nombre':nombre, 'email':email, 'coment':coment, '_token':_token };
 
   jQuery.ajax({
     async: true,
