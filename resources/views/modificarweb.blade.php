@@ -2,15 +2,17 @@
 
 @section('contenido')
 <?php
-    $id_web = $webs[0]['IdWeb'];
-    $nombre_web = $webs[0]['NombreWeb'];
-    $descripcion_web = $webs[0]['DescripcionWeb'];
-    $imagen_web = $webs[0]['LogoWebs'];
-    $url_web = $webs[0]['UrlWeb'];
-    $caracteristica_1_web = $webs[0]['Caracteristica1'];
-    $caracteristica_2_web = $webs[0]['Caracteristica2'];
-    $caracteristica_3_web = $webs[0]['Caracteristica3'];
-    $tags_web = $webs[0]['Tags'];
+    if(isset($_SESSION['session_email']))
+    {
+      $id_web = $webs[0]['IdWeb'];
+      $nombre_web = $webs[0]['NombreWeb'];
+      $descripcion_web = $webs[0]['DescripcionWeb'];
+      $imagen_web = $webs[0]['LogoWebs'];
+      $url_web = $webs[0]['UrlWeb'];
+      $caracteristica_1_web = $webs[0]['Caracteristica1'];
+      $caracteristica_2_web = $webs[0]['Caracteristica2'];
+      $caracteristica_3_web = $webs[0]['Caracteristica3'];
+      $tags_web = $webs[0]['Tags'];
 ?>
 <div id="main" class="with_sidebar right_sidebar">
   <div id="main_inner" class="clearboth blog_style_excerpt">
@@ -44,7 +46,9 @@
             </div>
             <div class="field">
               <label for="logo_web" style="margin-right: 2%;"> Logo: </label>
+              <input type="text" id="imagen" name="imagen" value="<?= $imagen_web ?>">
               <input type="file" id="logo_web" name="logo_web" placeholder="Imagen de la web" value="<?= $imagen_web ?>">
+              <div id="div_logo_web"></div>
             </div>
             <div class="field">
               <label for="url_web" style="margin-right: 2%;"> Url: </label>
@@ -79,4 +83,9 @@
     </div>
   </div>
 </div>
+<?php }
+      else {
+        echo "ERROR";
+      }
+?>
 @stop

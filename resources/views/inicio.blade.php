@@ -3,7 +3,7 @@
 @section('contenido') <!-- Aquí se va a mostrar el ranking de webs -->
 <style>
   #articulo_hover:hover{
-    background-color: rgb(236, 230, 179);
+    background-color: rgb(250, 245, 206);
   }
 </style>
 <div id="main" class="with_sidebar right_sidebar">
@@ -26,13 +26,13 @@
           $nombre_web = $webs[$i]['NombreWeb'];
       ?>
       <?php if($i == 0){ ?>
-      <article class="theme_article instock theme_yellowlight" id="articulo_hover">
+      <article class="theme_article instock theme_yellowlight" id="articulo_hover" style="border: 3px solid yellow;">
       <?php } else { ?>
       <article class="theme_article instock" id="articulo_hover">
       <?php } ?>
         <div class="post_thumb image_wrapper no_thumb" style="width: 320px;">
           <a href='{{url($nombre_web)}}'>
-            <div class="sc_slider sc_slider_flex" style="margin-top:30px;">
+            <div class="sc_slider sc_slider_flex" style="margin-top:60px;">
               <ul class="slides">
                 <li><img style="margin-top: 50px;padding:5px;" alt="{{ $nombre_web }}" src="{{ $webs[$i]['LogoWebs'] }}"></li>
               </ul>
@@ -63,22 +63,18 @@
             </div>
             <!-- /estrellas -->
            </div>
+           <br>
+           <!-- Read more -->
+           <div id="accordion_1" class="sc_accordion ui-accordion ui-widget ui-helper-reset" role="tablist">
+             <div class="sc_accordion_item">
+               <h5 class="sc_accordion_title ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-accordion-header-active ui-state-active ui-corner-top" role="tab" id="ui-accordion-accordion_1-header-1" aria-controls="ui-accordion-accordion_1-panel-1" aria-selected="true" aria-expanded="true" tabindex="0"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span>
+                 <a href="#"><span class="sc_accordion_icon"></span>Read more</a>
+               </h5>
+               <div class="sc_accordion_content ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active" id="ui-accordion-accordion_1-panel-1" aria-labelledby="ui-accordion-accordion_1-header-1" role="tabpanel" aria-hidden="false" style="display: block;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+             </div>
+            </div>
+            <!-- /Read more -->
 
-           <div class="post_text_area">
-             <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-               dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-               ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-               nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-           </div>
-          <!-- Info -->
-           <div class="post_info post_info_top theme_info">
-            <span class="post_cats">
-              <a class="cat_link" href="excerpt-style2.html">
-                {{ $webs[$i]['Info'] }}
-              </a>
-            </span>
-          </div>
-          <!-- /Info -->
 
            <div class="post_text_area">
             <div class="sc_column_item sc_column_item_4">

@@ -61,6 +61,12 @@ class ControllerModificarWeb extends Controller {
   } //Fin funcion anterior web
 
   public static function guardarWeb($input){
-
+    $devuelve['ok'] = 0;
+    if(isset($input['nombre_web']) && isset($input['descripcion_web']) && isset($input['descripcion_web']) && isset($input['logo_web'])
+    && isset($input['url_web']) && isset($input['caracteristica_1_web']) && isset($input['caracteristica_2_web']) && isset($input['caracteristica_3_web'])
+    && isset($input['tags'])){
+      $devuelve['ok'] =  $input['logo_web'];;
+    }
+    return $devuelve;
   } //Fin funcion guardar web
 }

@@ -7,6 +7,7 @@ function guardar(){
   var caracteristica_2_web = jQuery("#caracteristica_2_web").val();
   var caracteristica_3_web = jQuery("#caracteristica_3_web").val();
   var tags = jQuery("#tags").val();
+  var _token = jQuery('[name=_token]').val();
   var error = false;
 
   var datos = {
@@ -17,7 +18,8 @@ function guardar(){
                 'caracteristica_1_web':caracteristica_1_web,
                 'caracteristica_2_web':caracteristica_2_web,
                 'caracteristica_3_web':caracteristica_3_web,
-                'tags':tags
+                'tags':tags,
+                '_token':_token
               };
 
   if(nombre_web == "")
@@ -105,6 +107,16 @@ function guardar(){
     jQuery("#div_tags_web").html("<div style='display:none;' id='div_tags_web' class='sc_infobox sc_infobox_style_error'></div>");
   }
 
+  if(logo_web == "")
+  {
+    jQuery("#div_logo_web").html("<div id='div_nombre_web' class='sc_infobox sc_infobox_style_error'> Incluye una imagen. </div>");
+    error = true;
+  }
+  else
+  {
+    jQuery("#div_logo_web").html("<div style='display:none;' id='div_tags_web' class='sc_infobox sc_infobox_style_error'></div>");
+  }
+
   if(!error)
   {
     jQuery.ajax({
@@ -119,14 +131,7 @@ function guardar(){
   		},
   		success:function(respuesta)
   		{
-        //console.log(respuesta)
-        if(respuesta.ok==1) //Si existe en la bdd
-        {
-          location.reload();
-        }
-        else {
-          jQuery('#error_login').html("<br><div id='error_login' class='sc_infobox sc_infobox_style_error'> El email o contraseña no es correcto </div>");
-        }
+        console.log(respuesta)
   		},
       timeout:3000,
   		error:function(error)
