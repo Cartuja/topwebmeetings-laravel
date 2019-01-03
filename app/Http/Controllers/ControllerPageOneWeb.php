@@ -28,10 +28,9 @@ class ControllerPageOneWeb extends Controller {
 	static function addComent($input)
 	{
 		$devuelve['ok']=0;
-		if(trim($input['nombre']) != '' && trim($input['email']) != '' && trim($input['coment']) != '')
+		if(isset($_SESSION['session_email']))
 		{
-			$devuelve['ok']=3;
-			if(isset($_SESSION['session_email']))
+			if(trim($input['nombre']) != '' && trim($input['email']) != '' && trim($input['coment']) != '')
 			{
 				$devuelve['ok']=2; //Devuelve que no existe en la bdd y se puede registrar
 				$nuevo_comentario = new ModelComentario();
@@ -44,8 +43,10 @@ class ControllerPageOneWeb extends Controller {
 			}
 			else
 			{
-		    $devuelve['ok']=1;
+		    $devuelve['ok']=3;
 			}
+		} else{
+			$devuelve['ok']=1;
 		}
 
 		return $devuelve;

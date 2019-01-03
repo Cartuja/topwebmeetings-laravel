@@ -28,7 +28,7 @@ Route::match(['get','post'], '/ajax/deleteComent', function(){
 //-Eliminar comentario
 
 //Añadir comentario
-Route::post('/ajax/addComent', function(){
+Route::match(['get','post'],'/ajax/addComent', function(){
 	return response()->json(ControllerPageOneWeb::addComent(Input::All()));
 });
 //-Añadir comentario

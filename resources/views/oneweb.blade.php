@@ -213,12 +213,12 @@ for ($i=0; $i < count($web); $i++) {
 									<input type="hidden" name="_token" value="<?= csrf_token() ?>">
 									<p class="comment-form-author">
 										<label for="author" class="required">Name<span class="required"> (required)</span></label>
-										<input id="author" name="author" type="text" value="" size="30" aria-required='true' />
+										<input id="author" name="author" type="text" value="<?php if($email_session) { echo $usuario; } ?>" size="30" aria-required='true' <?php if($email_session) { ?> readonly <?php } ?> />
 									</p>
 									<p class="comment-form-email">
 										<input type="hidden" name="idUsuario" value="">
 										<label for="email" class="required">Email<span class="required"> (required)</span></label>
-										<input id="email" name="email" type="text" value="<?= $email_session ?>" size="30" aria-required='true' />
+										<input id="email" name="email" type="text" value="<?= $email_session ?>" size="30" aria-required='true' <?php if($email_session) { ?> readonly <?php } ?>/>
 									</p>
 									<p class="comment-form-comment">
 										<label for="comment" class="required">Your Message<span class="required"> (required)</span></label>

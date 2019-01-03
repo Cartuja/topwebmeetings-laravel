@@ -33,8 +33,6 @@ function addComent(){
       else if(respuesta.ok==3)
       {
         jQuery("#resultado_añadir_comentario").html("<br><div id='error_login' class='sc_infobox sc_infobox_style_error'> Rellena los campos </div>");
-      } else{
-        jQuery("#resultado_añadir_comentario").html("<br><div id='error_login' class='sc_infobox sc_infobox_style_error'> Vuelve a intentarlo mas tarde. </div>");
       }
     },
     timeout:3000,
