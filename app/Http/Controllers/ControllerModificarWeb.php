@@ -13,13 +13,25 @@ class ControllerModificarWeb extends Controller {
   }
 
   public static function mostrarWeb($input){
-    if(isset($input['id_web'])){
+    //Recogemos todas las Webs
+    $total_webs = ModelIndex::all();
+    if(isset($input['id_web']))
+    {
       $web = ModelIndex::Where('IdWeb', $input['id_web']+1)->orderBy('IdWeb')->get();
-      $devuelve = $web;
-    } else{
+        if(count($total_webs) == $input['id_web']) //Si llega a la ultima web de la base de datos
+        {
+          $devuelve = 0; //Devolvemos 0
+        }
+        else
+        {
+          $devuelve = $web; //Devolvemos la web
+        }
+
+    }
+    else
+    {
       $devuelve = 0;
     }
-
     return $devuelve;
   }
 }

@@ -24,7 +24,7 @@
               <li id="li_id_web" class="pager_current"><span title=""> <?= $id_web ?> </span></li>
               <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
               <input type="hidden" id="id_web" name="id_web" value="<?= $id_web; ?>">
-              <li class=""><a id="next" title="Siguiente" onclick="return next()">Next</a></li>
+              <li style="display:hidden" id="li_next" class=""><a id="next" title="Siguiente" onclick="return next()">Next</a></li>
           </ul>
         </div>
       </div>
