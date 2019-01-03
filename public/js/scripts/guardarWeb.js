@@ -1,4 +1,4 @@
-function editweb(){
+function guardar(){
   console.log("ok");
 
   var nombre_web = jQuery("#nombre_web").val();

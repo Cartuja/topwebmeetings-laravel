@@ -83,11 +83,6 @@
 		<div id="header_middle_wrapper">
 			<div id="header_middle"  >
 				<div id="header_middle_inner">
-					<div class="search_form_area theme_body">
-						<form class="search_form" action="#" method="get"><input class="search_field" type="search" placeholder="Type your search query and press 'Enter' ..." value="" name="s"></form>
-						<a href="#" class="search_close"><span class="icon-cancel-circled"></span></a>
-					</div>
-
 					<!-- main menu -->
 					<nav id="mainmenu_area" class="sidemenu_area theme_rating_bar" role="navigation">
 					<ul id="mainmenu" class="sf-js-enabled">
@@ -98,7 +93,6 @@
 						<?php } ?>
 						<li id="blob" style="width: 0px; height: 0px; left: 0px; top: 0px; background-color: rgb(187, 187, 187); opacity: 1;"></li>
 					</ul>
-					<a href="#" class="search_link"><span class="icon-search"></span></a>
 					</nav>
 					<!-- #main menu -->
 
@@ -216,7 +210,8 @@ function centrar() {
     <div class="popup_field popup_button"><button onclick="return Registro()" class="theme_button">Registrarse</button></div>
 </div>
 </div>
-<script type="text/javascript" src="/js/scripts/next.js?ver=<?= date('Y-m-d-h-i-s') ?>"></script>
+ <script type="text/javascript" src="/js/scripts/next.js?ver=<?= date('Y-m-d-h-i-s') ?>"></script>
+ <script type="text/javascript" src="/js/scripts/previo.js?ver=<?= date('Y-m-d-h-i-s') ?>"></script>
  <script type="text/javascript" src="/js/scripts/login.js"></script>
  <script type="text/javascript" src="/js/scripts/votar.js?hola=<?= date('Y-m-d-h-i-s') ?>"></script>
  <script type="text/javascript" src="/js/scripts/addComent.js"></script>

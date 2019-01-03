@@ -63,11 +63,18 @@ Route::post('/ajax/registro', function ()
 });
 //-Registro de usuarios
 
-//Ruta al ajax modificar webs
-Route::match(['get', 'post'],'/ajax/modificarWeb', function(){
-	return response()->json(ControllerModificarWeb::mostrarWeb(Input::All()));
+//Ruta siguiente web
+Route::post('/ajax/NextWeb', function(){
+	return response()->json(ControllerModificarWeb::NextWeb(Input::All()));
 });
-//Ruta al ajax modificar webs
+//-Ruta siguiente web
+
+//Ruta anterior web
+Route::match(['get', 'post'],'/ajax/PreviaWeb', function(){
+	return response()->json(ControllerModificarWeb::PreviaWeb(Input::All()));
+});
+//-Ruta anterior web
+
 
 //Contact footer
 Route::post('/ajax/contact', function ()

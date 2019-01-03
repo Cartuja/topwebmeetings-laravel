@@ -1,4 +1,4 @@
-function next(){
+function Next(){
   var id_web = jQuery("[name=id_web]").val();
   var _token = jQuery("[name=_token]").val();
 
@@ -9,17 +9,18 @@ function next(){
     type: "POST",
     dataType: "json",
     contentType: "application/x-www-form-urlencoded",
-    url: "/ajax/modificarWeb",
+    url: "/ajax/NextWeb",
     data: datos,
     beforeSend:function()
     {
     },
     success:function(respuesta)
     {
-      console.log(respuesta);
       if(respuesta == 0)
       {
-        jQuery('#li_next').css("display", "none");
+        //console.log(respuesta);
+        //jQuery('#li_next').css("display", "none");
+        //jQuery('#li_previo').css("display", "hidden");
       }
       else
       {
