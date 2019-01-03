@@ -43,6 +43,12 @@
 					} else{
 						$email_session = '';
 					}
+
+					if(isset($_SESSION['tipo_usuario'])){
+						$tipo_usuario =  $_SESSION['tipo_usuario'];
+					} else{
+						$tipo_usuario = '';
+					}
 				?>
 				<div id="login_area">
 					<?php if($email_session){ ?>
@@ -69,8 +75,7 @@
 					<div id="breadcrumbs_area">
 					  <ul class="breadcrumbs">
 					    <li class="home"><a href="{{ route('inicio') }}">Inicio</a></li>
-					    <li class="home"><a href="">Webs</a></li>
-					    <li class="home"><a href="blog.php">Blog</a></li>
+					    <li class="home"><a href="{{ route('allweb') }}">All web</a></li>
 					  </ul>
 					</div>
 					<!-- /breadcrumbs -->
@@ -88,6 +93,9 @@
 					<ul id="mainmenu" class="sf-js-enabled">
 						<li class="lightblue"><a href="{{ route ('inicio') }}" class="sf-with-ul">Inicio<span class="sf-sub-indicator icon-right-open"></span></a></li>
 						<li class="red"><a href="{{ route('allweb') }}" class="sf-with-ul"> All web <span class="sf-sub-indicator icon-right-open"></span></a></li>
+						<?php if($email_session && $tipo_usuario == 'Admin' ){ ?>
+						<li class="red"><a href="{{ route('modificarWeb') }}" class="sf-with-ul"> Modificar web <span class="sf-sub-indicator icon-right-open"></span></a></li>
+						<?php } ?>
 						<li id="blob" style="width: 0px; height: 0px; left: 0px; top: 0px; background-color: rgb(187, 187, 187); opacity: 1;"></li>
 					</ul>
 					<a href="#" class="search_link"><span class="icon-search"></span></a>
@@ -208,13 +216,13 @@ function centrar() {
     <div class="popup_field popup_button"><button onclick="return Registro()" class="theme_button">Registrarse</button></div>
 </div>
 </div>
-
+<script type="text/javascript" src="/js/scripts/next.js?ver=<?= date('Y-m-d-h-i-s') ?>"></script>
  <script type="text/javascript" src="/js/scripts/login.js"></script>
- <script type="text/javascript" src="/js/scripts/votar.js?ver=<?= date('Y-m-d-h-i-s') ?>"></script>
- <script type="text/javascript" src="/js/scripts/addComent.js?ver=<?= date('Y-m-d-h-i-s') ?>"></script>
- <script type="text/javascript" src="/js/scripts/eliminarComentario.js?ver=<?= date('Y-m-d-h-i-s') ?>"></script>
+ <script type="text/javascript" src="/js/scripts/votar.js?hola=<?= date('Y-m-d-h-i-s') ?>"></script>
+ <script type="text/javascript" src="/js/scripts/addComent.js"></script>
+ <script type="text/javascript" src="/js/scripts/eliminarComentario.js"></script>
  <script type="text/javascript" src="/js/jquery/jquery.js"></script>
- <script type="text/javascript" src="/js/jquery/jquery-migrate.min.js?ver2=<?= date('Ymdhis') ?>"></script>
+ <script type="text/javascript" src="/js/jquery/jquery-migrate.min.js"></script>
  <script type="text/javascript" src="/js/jquery/ui/jquery-ui-1.10.4.custom.js"></script>
  <script type="text/javascript" src="/js/jquery.cookie.js"></script>
  <script type="text/javascript" src="/js/jquery.easing.js"></script>

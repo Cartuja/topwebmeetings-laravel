@@ -34,6 +34,7 @@ class ControllerUsuario extends Controller
 			{
 				$devuelve['ok']=1;
         $_SESSION['session_email'] = $input['log'];
+        $_SESSION['tipo_usuario'] = $u[0]['TipoUsuario'];
 			}
 			else
 				$devuelve['ok']=0;
@@ -63,6 +64,7 @@ class ControllerUsuario extends Controller
 
         //creamos la session del Registro
         $_SESSION['session_email'] = $input['email'];
+        $_SESSION['tipo_usuario'] = $u[0]['TipoUsuario'];
       }
       else
       {

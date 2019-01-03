@@ -6,6 +6,7 @@ use App\Http\Controllers\ControllerValoraciones;
 use App\Http\Controllers\ControllerPageAllWeb;
 use App\Http\Controllers\ControllerPageOneWeb;
 use App\Http\Controllers\ControllerContact;
+use App\Http\Controllers\ControllerModificarWeb;
 
 /* Ruta Inicio */
 Route::get('/', ['as' => 'inicio', 'uses' => 'ControllerPageIndex@route']);
@@ -15,11 +16,19 @@ Route::post('/desconectar', ['as' => 'desconectar', 'uses' => 'ControllerUsuario
 
 /* Mandamos a la ruta '/' que es el inicio con la informacion de las webs */
 Route::get('/', 'ControllerPageIndex@Webs');
+/* -Mandamos a la ruta '/' que es el inicio con la informacion de las webs*/
 
+//Ruta a resumen de todas la webs
 Route::get('/allweb', ['as' => 'allweb', 'uses' => 'ControllerPageAllWeb@route']);
+//-Ruta a resumen de todas la webs
 
+//Ruta a modificar webs
+Route::get('/modificarWeb', ['as' => 'modificarWeb', 'uses' => 'ControllerModificarWeb@route']);
+//Ruta a modificar webs
+
+//Ruta a oneweb
 Route::get('/{nombre}', 'ControllerPageOneWeb@Web');
-//Route::post('{nombre}/comentarios', 'ControllerPageOneWeb@Web');
+//-Ruta a oneweb
 
 //Eliminar comentario
 Route::post('/ajax/deleteComent', function(){
@@ -28,7 +37,7 @@ Route::post('/ajax/deleteComent', function(){
 //-Eliminar comentario
 
 //Añadir comentario
-Route::match(['get', 'post'], '/ajax/addComent', function(){
+Route::post('/ajax/addComent', function(){
 	return response()->json(ControllerPageOneWeb::addComent(Input::All()));
 });
 //-Añadir comentario
@@ -53,6 +62,12 @@ Route::post('/ajax/registro', function ()
 	return response()->json(ControllerUsuario::Registro(Input::All()));
 });
 //-Registro de usuarios
+
+//Ruta al ajax modificar webs
+Route::match(['get', 'post'],'/ajax/modificarWeb', function(){
+	return response()->json(ControllerModificarWeb::mostrarWeb(Input::All()));
+});
+//Ruta al ajax modificar webs
 
 //Contact footer
 Route::post('/ajax/contact', function ()

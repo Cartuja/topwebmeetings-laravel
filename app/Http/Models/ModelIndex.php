@@ -11,8 +11,8 @@ class ModelIndex extends Model
   protected $primaryKey='IdWeb';
 
 
-  //const CREATED_AT = 'FechaAltaUsuario';
-  //const UPDATED_AT = 'FechaModificacionUsuario';
+  const CREATED_AT = 'FechaAltaWeb';
+  const UPDATED_AT = 'FechaModificacionWeb';
 
   //public $timestamps = false;
 }
