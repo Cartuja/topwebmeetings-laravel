@@ -30,14 +30,17 @@
       </div>
       <article class="theme_article instock theme_regular">
         <div style="width: 80%; margin:auto;">
-        <form action="" method="POST" class="sc_contact_form">
+        <form action="" method="" class="sc_contact_form">
+            <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
             <div class="field">
               <label for="nombre_web" style="margin-right: 2%;"> Nombre: </label>
               <input type="text" id="nombre_web" name="nombre_web" placeholder="Nombre" value="<?= $nombre_web ?>">
+              <div id="div_nombre_web"></div>
             </div>
             <div class="field">
               <label for="descripcion_web" style="margin-right: 2%;"> Descripcion: </label>
               <textarea id="descripcion_web" name="descripcion_web" placeholder="Descripcion"><?= $descripcion_web ?></textarea>
+              <div id="div_descripcion_web"></div>
             </div>
             <div class="field">
               <label for="logo_web" style="margin-right: 2%;"> Logo: </label>
@@ -46,29 +49,29 @@
             <div class="field">
               <label for="url_web" style="margin-right: 2%;"> Url: </label>
               <input type="text" id="url_web" name="url_web" placeholder="https://example.com" value="<?= $url_web ?>">
+              <div id="div_url_web"></div>
             </div>
             <div class="field">
               <label for="caracteristica_1_web" style="margin-right: 2%;"> Caracteristica 1: </label>
               <input type="text" id="caracteristica_1_web" name="caracteristica_1_web" placeholder="Example: Registros gratis" value="<?= $caracteristica_1_web ?>">
+              <div id="div_caracteristica_1"></div>
             </div>
             <div class="field">
               <label for="caracteristica_2_web" style="margin-right: 2%;"> Caracteristica 2: </label>
               <input type="text" id="caracteristica_2_web" name="caracteristica_2_web" placeholder="Example: Perfiles reales" value="<?= $caracteristica_2_web ?>">
+              <div id="div_caracteristica_2"></div>
             </div>
             <div class="field">
               <label for="caracteristica_3_web" style="margin-right: 2%;"> Caracteristica 3: </label>
               <input type="text" id="caracteristica_3_web" name="caracteristica_3_web" placeholder="Example: No es gratuito" value="<?= $caracteristica_3_web ?>">
+              <div id="div_caracteristica_3"></div>
             </div>
             <div class="field">
               <label for="tags" style="margin-right: 2%;"> Tags: </label>
               <input type="text" id="tags" name="tags" value="<?= $tags_web ?>">
+              <div id="div_tags_web"></div>
             </div>
-            <button style="float:right" onclick="return editweb()">Grabar web</span></button>
-            <div id="div_nombre_web"></div>
-            <div id="div_descripcion_web"></div>
-            <div id="div_logo_web"></div>
-            <div id="div_url_web"></div>
-            <div id="div_nombre"></div>
+            <button style="float:right" onclick="return guardar()">Grabar web</span></button>
             <div id="resultado_insertar_web"></div>
         </form>
         </div>

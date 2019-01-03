@@ -210,12 +210,13 @@ function centrar() {
     <div class="popup_field popup_button"><button onclick="return Registro()" class="theme_button">Registrarse</button></div>
 </div>
 </div>
- <script type="text/javascript" src="/js/scripts/next.js?ver=<?= date('Y-m-d-h-i-s') ?>"></script>
- <script type="text/javascript" src="/js/scripts/previo.js?ver=<?= date('Y-m-d-h-i-s') ?>"></script>
- <script type="text/javascript" src="/js/scripts/login.js"></script>
- <script type="text/javascript" src="/js/scripts/votar.js?hola=<?= date('Y-m-d-h-i-s') ?>"></script>
- <script type="text/javascript" src="/js/scripts/addComent.js"></script>
- <script type="text/javascript" src="/js/scripts/eliminarComentario.js"></script>
+ <script type="text/javascript" src="/js/scripts/guardarWeb.js"></script> <!--> guardamos las webs -->
+ <script type="text/javascript" src="/js/scripts/next.js"></script> <!--> boton next pestaña modificarWeb -->
+ <script type="text/javascript" src="/js/scripts/previo.js"></script> <!--> boton previous pestaña modificarWeb -->
+ <script type="text/javascript" src="/js/scripts/login.js"></script> <!--> login usuario -->
+ <script type="text/javascript" src="/js/scripts/votar.js"></script> <!--> votaciones usuarios que esta en oneweb -->
+ <script type="text/javascript" src="/js/scripts/addComent.js"></script> <!--> añadir comentarios, oneweb -->
+ <script type="text/javascript" src="/js/scripts/eliminarComentario.js"></script> <!--> eliminar comentarios, oneweb -->
  <script type="text/javascript" src="/js/jquery/jquery.js"></script>
  <script type="text/javascript" src="/js/jquery/jquery-migrate.min.js"></script>
  <script type="text/javascript" src="/js/jquery/ui/jquery-ui-1.10.4.custom.js"></script>

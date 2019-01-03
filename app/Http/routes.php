@@ -70,11 +70,16 @@ Route::post('/ajax/NextWeb', function(){
 //-Ruta siguiente web
 
 //Ruta anterior web
-Route::match(['get', 'post'],'/ajax/PreviaWeb', function(){
+Route::post('/ajax/PreviaWeb', function(){
 	return response()->json(ControllerModificarWeb::PreviaWeb(Input::All()));
 });
 //-Ruta anterior web
 
+//Guardar web
+Route::post('/ajax/guardarWeb', function(){
+	return response()->json(ControllerModificarWeb::GuardarWeb(Input::All()));
+});
+//-Guardar web
 
 //Contact footer
 Route::post('/ajax/contact', function ()

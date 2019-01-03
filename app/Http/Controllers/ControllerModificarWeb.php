@@ -59,4 +59,8 @@ class ControllerModificarWeb extends Controller {
     }
     return $devuelve;
   } //Fin funcion anterior web
+
+  public static function guardarWeb($input){
+
+  } //Fin funcion guardar web
 }

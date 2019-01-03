@@ -3,7 +3,7 @@ function Next(){
   var _token = jQuery("[name=_token]").val();
 
   var datos = { 'id_web':id_web, '_token':_token };
-  console.log(datos);
+  //console.log(datos);
   jQuery.ajax({
     async: true,
     type: "POST",
