@@ -1,4 +1,5 @@
 function guardar(){
+  var id_web = jQuery("#id_web").val();;
   var nombre_web = jQuery("#nombre_web").val();
   var descripcion_web = jQuery("#descripcion_web").val();
   var logo_web = jQuery("#logo_web").val();
@@ -11,6 +12,7 @@ function guardar(){
   var error = false;
 
   var datos = {
+                'id_web':id_web,
                 'nombre_web':nombre_web,
                 'descripcion_web':descripcion_web,
                 'logo_web':logo_web,
@@ -107,16 +109,6 @@ function guardar(){
     jQuery("#div_tags_web").html("<div style='display:none;' id='div_tags_web' class='sc_infobox sc_infobox_style_error'></div>");
   }
 
-  if(logo_web == "")
-  {
-    jQuery("#div_logo_web").html("<div id='div_nombre_web' class='sc_infobox sc_infobox_style_error'> Incluye una imagen. </div>");
-    error = true;
-  }
-  else
-  {
-    jQuery("#div_logo_web").html("<div style='display:none;' id='div_tags_web' class='sc_infobox sc_infobox_style_error'></div>");
-  }
-
   if(!error)
   {
     jQuery.ajax({
@@ -131,9 +123,14 @@ function guardar(){
   		},
   		success:function(respuesta)
   		{
-        console.log(respuesta)
+        //console.log(respuesta);
+        if(respuesta.ok == 1){
+          jQuery('#respuesta_añadir_web').html("<br><div style'width:50%;' id='respuesta_añadir_web' class='sc_infobox sc_infobox_style_success'> ¡Has actualizado la web! </div>");
+        } else{
+          jQuery('#respuesta_añadir_web').html("<br><div style'width:50%;' id='respuesta_añadir_web' class='sc_infobox sc_infobox_style_error'> Rellena todos los campos </div>");
+        }
   		},
-      timeout:3000,
+      timeout:100,
   		error:function(error)
   		{
   			jQuery('#error_login').html("<br><div id='error_login' class='sc_infobox sc_infobox_style_error'> Internal Server Error </div>");

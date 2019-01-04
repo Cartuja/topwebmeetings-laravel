@@ -1,9 +1,9 @@
 function Next(){
   var id_web = jQuery("[name=id_web]").val();
   var _token = jQuery("[name=_token]").val();
+  var posicion_web = jQuery("[name=posicion_web]").val();
 
   var datos = { 'id_web':id_web, '_token':_token };
-  //console.log(datos);
   jQuery.ajax({
     async: true,
     type: "POST",
@@ -25,8 +25,10 @@ function Next(){
       else
       {
         jQuery('#id_web').val(respuesta[0]['IdWeb']);
-        jQuery('#li_id_web').html("<li id='li_id_web' class='pager_current'><span title=''>"+respuesta[0]['IdWeb']+"</span></li>");
+        jQuery('#li_id_web').html("<li id='li_id_web' class='pager_current'><span title=''>"+(parseInt(posicion_web)+parseInt(1))+"</span></li>");
+        jQuery('#posicion_web').val((parseInt(posicion_web)+parseInt(1)));
         jQuery('#nombre_web').val(respuesta[0]['NombreWeb']);
+        jQuery('#titulo_web').html("<h1>"+respuesta[0]['NombreWeb']+"</h1>");
         jQuery('#descripcion_web').html(respuesta[0]['DescripcionWeb']);
         jQuery('#url_web').val(respuesta[0]['UrlWeb']);
         jQuery('#caracteristica_1_web').val(respuesta[0]['Caracteristica1']);
@@ -35,7 +37,7 @@ function Next(){
         jQuery('#tags').val(respuesta[0]['Tags']);
       }
     },
-    timeout:3000,
+    timeout:0,
     error:function(error)
     {
       jQuery('#resultado_next').html("<br><div id='error_login' class='sc_infobox sc_infobox_style_error'> Internal Server Error </div>");

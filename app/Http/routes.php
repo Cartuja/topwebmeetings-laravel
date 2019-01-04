@@ -50,7 +50,7 @@ Route::post('/ajax/login', function ()
 //-login de la web
 
 //Votaciones usuarios
-Route::match(['get','post'],'/ajax/votar', function ()
+Route::post('/ajax/votar', function ()
 {
 	return response()->json(ControllerValoraciones::Votar(Input::All()));
 });
@@ -80,6 +80,12 @@ Route::post('/ajax/guardarWeb', function(){
 	return response()->json(ControllerModificarWeb::GuardarWeb(Input::All()));
 });
 //-Guardar web
+
+//Eliminar web
+Route::post('/ajax/eliminarWeb', function(){
+	return response()->json(ControllerModificarWeb::EliminarWeb(Input::All()));
+});
+//-Eliminar web
 
 //Contact footer
 Route::post('/ajax/contact', function ()

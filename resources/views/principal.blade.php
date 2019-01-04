@@ -65,7 +65,7 @@
 
 				<!-- Logo -->
 					<div class="logo logo_text">
-						<a href="index.html">
+						<a href="{{ route('inicio') }}">
 							<span class="logo_title theme_header">Top<span class="theme_accent">web</span>meetings</span><span class="logo_slogan theme_info"></span>
 						</a>
 					</div>
@@ -113,7 +113,7 @@
 	    <!--logo and description -->
 	    <aside class="widget widget_socials">
 	      <div class="widget_inner">
-	        <div class="logo logo_text"><a href="/">
+	        <div class="logo logo_text"><a href="{{ route('inicio') }}">
 	          <span class="logo_title theme_header">top<span class="theme_accent">web</span>meetings</span></a>
 	        </div>
 	        <div class="logo_descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
@@ -210,9 +210,10 @@ function centrar() {
     <div class="popup_field popup_button"><button onclick="return Registro()" class="theme_button">Registrarse</button></div>
 </div>
 </div>
+ <script type="text/javascript" src="/js/scripts/eliminarWeb.js?ver=<?= date('Y-m-d-h-i-s') ?>"></script> <!-- eliminamos las webs -->
  <script type="text/javascript" src="/js/scripts/guardarWeb.js"></script> <!-- guardamos las webs -->
- <script type="text/javascript" src="/js/scripts/next.js"></script> <!-- boton next pestaña modificarWeb -->
- <script type="text/javascript" src="/js/scripts/previo.js"></script> <!-- boton previous pestaña modificarWeb -->
+ <script type="text/javascript" src="/js/scripts/next.js?ver=<?= date('Y-m-d-h-i-s') ?>"></script> <!-- boton next pestaña modificarWeb -->
+ <script type="text/javascript" src="/js/scripts/previo.js?ver=<?= date('Y-m-d-h-i-s') ?>"></script> <!-- boton previous pestaña modificarWeb -->
  <script type="text/javascript" src="/js/scripts/login.js"></script> <!-- login usuario -->
  <script type="text/javascript" src="/js/scripts/votar.js"></script> <!-- votaciones usuarios que esta en oneweb -->
  <script type="text/javascript" src="/js/scripts/addComent.js"></script> <!-- añadir comentarios, oneweb -->

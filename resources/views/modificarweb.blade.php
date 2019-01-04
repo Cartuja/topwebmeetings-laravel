@@ -2,17 +2,19 @@
 
 @section('contenido')
 <?php
+$posicionWeb = 1;
     if(isset($_SESSION['session_email']))
     {
-      $id_web = $webs[0]['IdWeb'];
-      $nombre_web = $webs[0]['NombreWeb'];
-      $descripcion_web = $webs[0]['DescripcionWeb'];
-      $imagen_web = $webs[0]['LogoWebs'];
-      $url_web = $webs[0]['UrlWeb'];
-      $caracteristica_1_web = $webs[0]['Caracteristica1'];
-      $caracteristica_2_web = $webs[0]['Caracteristica2'];
-      $caracteristica_3_web = $webs[0]['Caracteristica3'];
-      $tags_web = $webs[0]['Tags'];
+      $i = 0;
+      $id_web = $webs[$i]['IdWeb'];
+      $nombre_web = $webs[$i]['NombreWeb'];
+      $descripcion_web = $webs[$i]['DescripcionWeb'];
+      $imagen_web = $webs[$i]['LogoWebs'];
+      $url_web = $webs[$i]['UrlWeb'];
+      $caracteristica_1_web = $webs[$i]['Caracteristica1'];
+      $caracteristica_2_web = $webs[$i]['Caracteristica2'];
+      $caracteristica_3_web = $webs[$i]['Caracteristica3'];
+      $tags_web = $webs[$i]['Tags'];
 ?>
 <div id="main" class="with_sidebar right_sidebar">
   <div id="main_inner" class="clearboth blog_style_excerpt">
@@ -23,16 +25,19 @@
           <ul>
               <li class="pager_pages"><span></span></li>
               <li style="display:hidden" id="li_previo" class=""> <a id="previo" title="Anterior" onclick="return Previo()"> Previous </a></li>
-              <li id="li_id_web" class="pager_current"><span title=""> <?= $id_web ?> </span></li>
+              <li id="li_id_web" class="pager_current"><span title=""> <?= $posicionWeb ?> </span></li>
               <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-              <input type="hidden" id="id_web" name="id_web" value="<?= $id_web; ?>">
+              <input type="hidden" id="posicion_web" name="posicion_web" value="<?= $posicionWeb ?>">
               <li style="display:hidden" id="li_next" class=""><a id="next" title="Siguiente" onclick="return Next()">Next</a></li>
           </ul>
         </div>
       </div>
+
       <article class="theme_article instock theme_regular">
+        <h1 id="titulo_web" style='margin-left:50px;'><?= $nombre_web ?> </h1>
         <div style="width: 80%; margin:auto;">
-        <form action="" method="" class="sc_contact_form">
+        <form class="sc_contact_form">
+            <input type="hidden" id="id_web" name="id_web" value="<?= $id_web ?>">
             <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
             <div class="field">
               <label for="nombre_web" style="margin-right: 2%;"> Nombre: </label>
@@ -46,7 +51,7 @@
             </div>
             <div class="field">
               <label for="logo_web" style="margin-right: 2%;"> Logo: </label>
-              <input type="text" id="imagen" name="imagen" value="<?= $imagen_web ?>">
+              <input type="hidden" id="imagen" name="imagen" value="<?= $imagen_web ?>">
               <input type="file" id="logo_web" name="logo_web" placeholder="Imagen de la web" value="<?= $imagen_web ?>">
               <div id="div_logo_web"></div>
             </div>
@@ -75,11 +80,13 @@
               <input type="text" id="tags" name="tags" value="<?= $tags_web ?>">
               <div id="div_tags_web"></div>
             </div>
-            <button style="float:right" onclick="return guardar()">Grabar web</span></button>
-            <div id="resultado_insertar_web"></div>
+            <button style="float:right; margin-left:5%;" onclick="return guardar()">Grabar web</span></button>
+            <button style="float:right" onclick="return eliminar()">Eliminar web</span></button>
         </form>
         </div>
       </article>
+      <div id="respuesta_añadir_web"></div>
+      <div id="respuesta_eliminar_web"></div>
     </div>
   </div>
 </div>

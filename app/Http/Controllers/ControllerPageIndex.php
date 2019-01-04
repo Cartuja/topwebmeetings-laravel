@@ -14,7 +14,7 @@ class ControllerPageIndex extends Controller {
 
 	public function Webs()
 	{
-		$webs = ModelIndex::all();
+		$webs = ModelIndex::Where('FechaBajaWeb', null)->get();
 		return view('inicio', compact('webs'));
 	}
 

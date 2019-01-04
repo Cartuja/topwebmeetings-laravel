@@ -8,7 +8,7 @@ use App\Http\Models\ModelIndex;
 class ControllerPageAllWeb extends Controller {
 
 	public static function route(){
-		$webs = ModelIndex::all();
+		$webs = ModelIndex::Where('FechaBajaWeb', null)->get();
 		return view('allweb', ['webs' => $webs]);
 	}
 
