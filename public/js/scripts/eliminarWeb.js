@@ -26,7 +26,7 @@ function eliminar(){
         jQuery('#respuesta_eliminar_web').html("<br><div style'width:50%;' id='respuesta_añadir_web' class='sc_infobox sc_infobox_style_error'> Error al borrar la web </div>");
       }
     },
-    timeout:3000,
+    timeout:5000,
     error:function(error)
     {
       jQuery('#error_login').html("<br><div id='error_login' class='sc_infobox sc_infobox_style_error'> Internal Server Error </div>");

@@ -16,9 +16,6 @@ function Votar(tipo_votacion)
   		contentType: "application/x-www-form-urlencoded",
   		url: "/ajax/votar",
   		data: datos,
-  		beforeSend:function()
-  		{
-  		},
   		success:function(respuesta)
   		{
         console.log(respuesta)
@@ -29,15 +26,17 @@ function Votar(tipo_votacion)
         else if(respuesta.ok==0)
         {
           jQuery('#resultado_votar').html("<br><div id='error_votar' class='sc_infobox sc_infobox_style_error'> Ya has votado </div>");
-        } else{
+        }
+        else
+        {
           jQuery('#resultado_votar').html("<br><div id='error_votar' class='sc_infobox sc_infobox_style_error'> Registrate para poder votar </div>");
         }
   		},
-      timeout:3000,
   		error:function(error)
   		{
   			jQuery('#error_login').html("<br><div id='error_login' class='sc_infobox sc_infobox_style_error'> Internal Server Error </div>");
-  		}
+  		},
+      timeout:3000,
   	});
   }
 

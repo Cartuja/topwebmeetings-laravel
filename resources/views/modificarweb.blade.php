@@ -5,16 +5,28 @@
 $posicionWeb = 1;
     if(isset($_SESSION['session_email']))
     {
-      $i = 0;
-      $id_web = $webs[$i]['IdWeb'];
-      $nombre_web = $webs[$i]['NombreWeb'];
-      $descripcion_web = $webs[$i]['DescripcionWeb'];
-      $imagen_web = $webs[$i]['LogoWebs'];
-      $url_web = $webs[$i]['UrlWeb'];
-      $caracteristica_1_web = $webs[$i]['Caracteristica1'];
-      $caracteristica_2_web = $webs[$i]['Caracteristica2'];
-      $caracteristica_3_web = $webs[$i]['Caracteristica3'];
-      $tags_web = $webs[$i]['Tags'];
+      if(count($webs) != 0){
+        $i = 0;
+        $id_web = $webs[$i]['IdWeb'];
+        $nombre_web = $webs[$i]['NombreWeb'];
+        $descripcion_web = $webs[$i]['DescripcionWeb'];
+        $imagen_web = $webs[$i]['LogoWebs'];
+        $url_web = $webs[$i]['UrlWeb'];
+        $caracteristica_1_web = $webs[$i]['Caracteristica1'];
+        $caracteristica_2_web = $webs[$i]['Caracteristica2'];
+        $caracteristica_3_web = $webs[$i]['Caracteristica3'];
+        $tags_web = $webs[$i]['Tags'];
+    } else{
+      $id_web = '';
+      $nombre_web = '';
+      $descripcion_web = '';
+      $imagen_web = '';
+      $url_web = '';
+      $caracteristica_1_web = '';
+      $caracteristica_2_web = '';
+      $caracteristica_3_web = '';
+      $tags_web = '';
+    }
 ?>
 <div id="main" class="with_sidebar right_sidebar">
   <div id="main_inner" class="clearboth blog_style_excerpt">
@@ -24,11 +36,11 @@ $posicionWeb = 1;
         <div id="nav_pages" class="theme_paginaton">
           <ul>
               <li class="pager_pages"><span></span></li>
-              <li style="display:hidden" id="li_previo" class=""> <a id="previo" title="Anterior" onclick="return Previo()"> Previous </a></li>
+              <li style="display:hidden" id="li_previo" class=""> <a id="previo" title="Anterior" onclick="return Previo()"> < </a></li>
               <li id="li_id_web" class="pager_current"><span title=""> <?= $posicionWeb ?> </span></li>
               <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
               <input type="hidden" id="posicion_web" name="posicion_web" value="<?= $posicionWeb ?>">
-              <li style="display:hidden" id="li_next" class=""><a id="next" title="Siguiente" onclick="return Next()">Next</a></li>
+              <li style="display:hidden" id="li_next" class=""><a id="next" title="Siguiente" onclick="return Next()"> > </a></li>
           </ul>
         </div>
       </div>
