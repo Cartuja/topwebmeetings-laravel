@@ -31,14 +31,19 @@
       <article class="theme_article instock" id="articulo_hover">
       <?php } ?>
         <div class="post_thumb image_wrapper no_thumb" style="width: 320px;">
+          <div class="sc_blogger_item sc_column_item sc_column_item_1 sc_blogger_item_bordered first">
+						<h2 class="sc_blogger_title sc_title entry-title sc_title_bubble sc_title_bubble_top">
+							<span class="sc_title_bubble_icon">{{ $posicion_web }}</span>
+							</a>
+						</h2>
+					</div>
           <a href='{{url($nombre_web)}}'>
             <div class="sc_slider sc_slider_flex" style="margin-top:60px;">
               <ul class="slides">
-                <li><img style="margin-top: 50px;padding:5px;" alt="{{ $nombre_web }}" src="{{ $webs[$i]['LogoWebs'] }}"></li>
+                <li><img style="padding:5px;" alt="{{ $nombre_web }}" src="{{ $webs[$i]['LogoWebs'] }}"></li>
               </ul>
             </div>
           </a>
-          <span class="post_category theme_accent_bg">{{ $posicion_web }}</span>
         </div>
 
         <div class="post_content">
@@ -74,7 +79,6 @@
              </div>
             </div>
             <!-- /Read more -->
-
 
            <div class="post_text_area">
             <div class="sc_column_item sc_column_item_4">

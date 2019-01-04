@@ -4,7 +4,7 @@ function Votar(tipo_votacion)
   var id_web=jQuery("[name=idweb]").val();
   var _token = jQuery("[name=_token]").val();
 
-  var datos={ 'id_web':id_web, 'valoracion_votacion':valoracion_votacion, 'tipo_votacion':tipo_votacion, '_token':_token };
+  var datos={ 'id_web':id_web, 'valoracion_votacion':valoracion_votacion, 'tipo_votacion':tipo_votacion, '_token':_token, };
 
   console.log(datos);
 

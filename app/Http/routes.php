@@ -76,7 +76,7 @@ Route::post('/ajax/PreviaWeb', function(){
 //-Ruta anterior web
 
 //Guardar web
-Route::match(['post', 'get'],'/ajax/guardarWeb', function(){
+Route::post('/ajax/guardarWeb', function(){
 	return response()->json(ControllerModificarWeb::GuardarWeb(Input::All()));
 });
 //-Guardar web

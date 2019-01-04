@@ -7,14 +7,25 @@ if(isset($_SESSION['session_email'])){
 } else{
 	$email_session = '';
 }
-
+/* Recogemos datos de las webs */
 for ($i=0; $i < count($web); $i++) {
 	 $id_web = $web[$i]['IdWeb'];
    $nombre_web = $web[$i]['NombreWeb'];
    $logo_web = $web[$i]['LogoWebs'];
    $valoracion_total = $web[$i]['ValoracionTotalWebs'];
    $descripcion = $web[$i]['DescripcionWeb'];
-} ?>
+}
+/* /Recogemos datos de las webs */
+
+/* Recoger usuarios */
+	$id_usuario = "";
+	for ($i=0; $i < count($usuarios) ; $i++) {
+		if($email_session == $usuarios[$i]['EmailUsuario']){
+			$nombre = $usuarios[$i]['NombreUsuario'];
+		}
+	}
+/* /Recoger usuarios */
+?>
 <div id="main" class="with_sidebar right_sidebar">
 		<div id="main_inner" class="clearboth blog_style_fullpost">
 			<!-- content -->
@@ -196,16 +207,6 @@ for ($i=0; $i < count($web); $i++) {
 						</div>
 						<div id="resultado_eliminar"></div>
 						<!-- #comments -->
-						<!-- Recoger nombre usuario -->
-						<?php
-							$id_usuario = "";
-							for ($i=0; $i < count($usuarios) ; $i++) {
-								if($email_session == $usuarios[$i]['EmailUsuario']){
-									$nombre = $usuarios[$i]['NombreUsuario'];
-								}
-							}
-						?>
-						<!-- /Recoger nombre usuario -->
 						<div class="post_comments_form theme_article">
 							<div id="respond" class="comment-respond">
 								<h3 id="reply-title">Introduce un comentario </h3>

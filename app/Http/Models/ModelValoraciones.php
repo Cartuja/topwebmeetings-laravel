@@ -8,9 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class ModelValoraciones extends Model
 {
   protected $table = 'Valoraciones';
-  protected $primaryKey='IdUsuario';
-  protected $primaryKey2='IdWeb';
-  protected $primaryKey3='TipoVotacion';
 
   const CREATED_AT = 'FechaAltaValoracion';
   const UPDATED_AT = 'FechaModificacionValoracion';
