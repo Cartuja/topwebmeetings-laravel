@@ -58,8 +58,20 @@ $posicionWeb = 1;
             </div>
             <div class="field">
               <label for="descripcion_web" style="margin-right: 2%;"> Descripcion: </label>
-              <textarea id="descripcion_web" name="descripcion_web" placeholder="Descripcion">hola <?= $descripcion_web ?></textarea>
+              <textarea id="descripcion_web" name="descripcion_web" placeholder="Descripcion"><?= $descripcion_web ?></textarea>
               <div id="div_descripcion_web"></div>
+              <script>
+                  DecoupledEditor
+                      .create( document.querySelector( '#editor' ) )
+                      .then( editor => {
+                          const toolbarContainer = document.querySelector( '#toolbar-container' );
+
+                          toolbarContainer.appendChild( editor.ui.view.toolbar.element );
+                      } )
+                      .catch( error => {
+                          console.error( error );
+                      } );
+              </script>
             </div>
             <div class="field">
               <label for="logo_web" style="margin-right: 2%;"> Logo: </label>

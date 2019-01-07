@@ -218,7 +218,7 @@ function centrar() {
  <script type="text/javascript" src="/js/scripts/votar.js"></script> <!-- votaciones usuarios que esta en oneweb -->
  <script type="text/javascript" src="/js/scripts/addComent.js"></script> <!-- añadir comentarios, oneweb -->
  <script type="text/javascript" src="/js/scripts/eliminarComentario.js"></script> <!-- eliminar comentarios, oneweb -->
- <script type="text/javascript" src="/js/ckeditor5-build-decoupled-document/ckeditor.js?ver=<?= date('Y-m-d-h-i-s') ?>"></script> <!-- ckeditor -->
+ <script type="text/javascript" src="/js/ckeditor5-build-decoupled-document/ckeditor.js"></script> <!-- ckeditor -->
  <script type="text/javascript" src="/js/jquery/jquery.js"></script>
  <script type="text/javascript" src="/js/jquery/jquery-migrate.min.js"></script>
  <script type="text/javascript" src="/js/jquery/ui/jquery-ui-1.10.4.custom.js"></script>
