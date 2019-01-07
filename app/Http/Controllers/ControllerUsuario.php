@@ -64,7 +64,7 @@ class ControllerUsuario extends Controller
 
         //creamos la session del Registro
         $_SESSION['session_email'] = $input['email'];
-        $_SESSION['tipo_usuario'] = $u[0]['TipoUsuario'];
+        $_SESSION['tipo_usuario'] = $existe_email[0]['TipoUsuario'];
       }
       else
       {
@@ -73,5 +73,30 @@ class ControllerUsuario extends Controller
     }
     return $devuelve;
 	}
+
+  static function NuevaPass($input){
+    $devuelve['ok']=0;
+
+		if (isset($input['correo']) && isset($input['pass']))
+		{
+			$u=ModelUsuario::Where('EmailUsuario',$input['correo'])->get();
+			if ($u[0]['EmailUsuario'] == $input['correo'])
+			{
+        $id_usuario = $u[0]['IdUsuario'];
+        $cambiar_pass = ModelUsuario::find($id_usuario);
+        $cambiar_pass->PassUsuario=$input['pass'];
+        $cambiar_pass->save();
+				$devuelve['ok']=1;
+        $_SESSION['session_email'] = $input['correo'];
+        $_SESSION['tipo_usuario'] = $u[0]['TipoUsuario'];
+
+        //añadir metodo para enviar correo al usuario
+			}
+			else
+				$devuelve['ok']=0;
+		}
+		return $devuelve;
+
+  }
 
 }

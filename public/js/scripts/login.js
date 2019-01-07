@@ -4,14 +4,29 @@ function Login()
   var log = jQuery("[name=log]").val();
   var pwd = jQuery("[name=pwd]").val();
   var _token = jQuery("[name=_token]").val();
+  var error = false;
 
   var datos = {'log':log, 'pwd':pwd, '_token':_token}
-  console.log(datos);
-  if(log == "" || pwd == "")
+  //console.log(datos);
+  var regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+  var validar_email = regex.test(log) ? true : false;
+
+  if(log == "")
   {
-    jQuery('#error_login').html("<br><div id='error_registro' class='sc_infobox sc_infobox_style_error'> Rellena todos los campos. </div>");
+    jQuery('#error_login').html("<br><div id='error_registro' class='sc_infobox sc_infobox_style_error'> Campo email vacio. </div>");
+    error = true;
   }
-  else{
+  else if(!validar_email)
+  {
+    jQuery('#error_login').html("<br><div id='error_registro' class='sc_infobox sc_infobox_style_error'> Ese correo no es valido. </div>");
+    error = true;
+  } else if(pwd == ""){
+    jQuery('#error_login').html("<br><div id='error_registro' class='sc_infobox sc_infobox_style_error'> Contraseña vacia. </div>");
+    error = true;
+  }
+
+  if(!error)
+  {
     // console.log(datos);
   	jQuery.ajax({
   		async: true,
@@ -30,7 +45,7 @@ function Login()
         {
           location.reload();
         }
-        else {
+        else if(respuesta.ok==0){
           jQuery('#error_login').html("<br><div id='error_login' class='sc_infobox sc_infobox_style_error'> El email o contraseña no es correcto </div>");
         }
   		},

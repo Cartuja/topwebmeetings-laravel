@@ -11,6 +11,10 @@ function Registro()
   //Validar email
   var regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
   var validar_email = regex.test(email) ? true : false;
+  //Validamos contraseña
+  var regex_pass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/;
+  var validar_pass = regex_pass.test(pass) ? true : false;
+  var validar_pass2 = regex_pass.test(pass2) ? true : false;
 
   if(nombre == '' || email == '' || pass == '' || pass2 == '')
   {
@@ -19,11 +23,12 @@ function Registro()
   } else if(!validar_email){
     jQuery('#error_registro').html("<br><div id='error_registro' class='sc_infobox sc_infobox_style_error'> Email no valido. </div>");
     error = true;
-  }
-
-  if(pass != pass2 ){
+  } else if(pass != pass2 ){
     jQuery('#error_registro').html("<br><div id='error_registro' class='sc_infobox sc_infobox_style_error'> Las contraseñas son diferentes. </div>");
     error = true;
+  } else if(!validar_pass || !validar_pass2){
+    error = true;
+    jQuery('#error_registro').html("<br><div id='error_registro' class='sc_infobox sc_infobox_style_error'> La contraseña debe tener entre 8 y 15 caracteres, al menos un dígito, al menos una minúscula, al menos una mayúscula, sin blancos y al menos un caracter especial. </div>");
   }
 
   if(error == false){ //Si no hay errores de campos vacios, email no valido o contraseñas diferentes

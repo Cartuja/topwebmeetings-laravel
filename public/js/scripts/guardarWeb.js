@@ -130,7 +130,7 @@ function guardar(){
         }
         else if(respuesta.ok == 2)
         {
-          console.log(respuesta);
+          //console.log(respuesta);
           jQuery('#respuesta_añadir_web').html("<br><div style'width:50%;' id='respuesta_añadir_web' class='sc_infobox sc_infobox_style_success'> ¡Has añadido nueva web! </div>");
 
         }

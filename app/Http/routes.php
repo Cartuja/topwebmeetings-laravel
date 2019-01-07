@@ -57,11 +57,18 @@ Route::post('/ajax/votar', function ()
 //-Votaciones usuarios
 
 //Registro de usuarios
-Route::post('/ajax/registro', function ()
+Route::match(['get','post'],'/ajax/registro', function ()
 {
 	return response()->json(ControllerUsuario::Registro(Input::All()));
 });
 //-Registro de usuarios
+
+//Nueva contraseña de usuarios
+Route::post('/ajax/NuevaPass', function ()
+{
+	return response()->json(ControllerUsuario::NuevaPass(Input::All()));
+});
+//-Nueva contraseña de usuarios
 
 //Ruta siguiente web
 Route::post('/ajax/NextWeb', function(){

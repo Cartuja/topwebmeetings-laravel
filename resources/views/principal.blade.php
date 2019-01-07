@@ -180,12 +180,19 @@ function centrar() {
     <div class="popup_body theme_article">
     <h4 class="popup_title">Login</h4>
 		<div id="error_login"> </div>
+		<div id="error_nueva_pass"> </div>
 				<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
         <div class="popup_field"><input type="text" name="log" id="log" placeholder="Login*" /></div>
         <div class="popup_field"><input type="password" name="pwd" id="pwd" placeholder="Password*" /></div>
-        <div class="popup_field popup_button"><button onclick="return Login()" name="acceder" class="theme_button"> Login</button></div>
+        <div id="div_btn_login" class="popup_field popup_button"><button onclick="return Login()" name="acceder" class="theme_button"> Login</button></div>
+				<!-- NUEVA CONTRASEÑA -->
+				<div id="div_email" style="display:none" class="popup_field"><input type="text" name="correo" id="correo" placeholder="Introduce tu email*" /></div>
+        <div id="div_pass" style="display:none" class="popup_field"> <input type="password" name="pass" id="pass" placeholder="Introduce nueva contraseña*" placeholder="Password*"/></div>
+				<div id="div_pass_2" style="display:none" class="popup_field"> <input type="password" name="pass2" id="pass2" placeholder="Introduce de nuevo contraseña*" /></div>
+				<div id="div_btn_cambiar_pass" style="display:none" class="popup_field popup_button"><button onclick="return NuevaPass()" name="cambiar_pass" class="theme_button"> Cambiar contraseña </button></div>
+				<!-- /NUEVA CONTRASEÑA -->
         <div class="popup_field forgot_password">
-          <a href="#">Forgot password?</a>
+          <a onclick="return ContrasenaOlvidada()" href="">Forgot password?</a>
         </div>
       <div class="popup_field register">
         <a href="#">Register</a>
@@ -211,14 +218,15 @@ function centrar() {
     <div class="popup_field popup_button"><button onclick="return Registro()" class="theme_button">Registrarse</button></div>
 </div>
 </div>
-volverAtras
  <script type="text/javascript" src="/js/scripts/volverAtras.js"></script> <!-- volver atras (modificarWeb) -->
+ <script type="text/javascript" src="/js/scripts/ContrasenaOlvidada.js"></script> <!-- contraseña OLVIDADA -->
+ <script type="text/javascript" src="/js/scripts/NuevaPass.js?ver=<?= date('Ymdhms') ?>"></script> <!-- NUEVA contrseña -->
  <script type="text/javascript" src="/js/scripts/eliminarWeb.js"></script> <!-- eliminamos las webs -->
  <script type="text/javascript" src="/js/scripts/addWeb.js"></script> <!-- añadimos las webs -->
  <script type="text/javascript" src="/js/scripts/guardarWeb.js"></script> <!-- guardamos las webs -->
  <script type="text/javascript" src="/js/scripts/next.js"></script> <!-- boton next pestaña modificarWeb -->
  <script type="text/javascript" src="/js/scripts/previo.js"></script> <!-- boton previous pestaña modificarWeb -->
- <script type="text/javascript" src="/js/scripts/login.js"></script> <!-- login usuario -->
+ <script type="text/javascript" src="/js/scripts/login.js?ver=<?= date('Ymdhms') ?>"></script> <!-- login usuario -->
  <script type="text/javascript" src="/js/scripts/votar.js"></script> <!-- votaciones usuarios que esta en oneweb -->
  <script type="text/javascript" src="/js/scripts/addComent.js"></script> <!-- añadir comentarios, oneweb -->
  <script type="text/javascript" src="/js/scripts/eliminarComentario.js"></script> <!-- eliminar comentarios, oneweb -->
