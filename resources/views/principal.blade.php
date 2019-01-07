@@ -211,8 +211,10 @@ function centrar() {
     <div class="popup_field popup_button"><button onclick="return Registro()" class="theme_button">Registrarse</button></div>
 </div>
 </div>
+volverAtras
+ <script type="text/javascript" src="/js/scripts/volverAtras.js"></script> <!-- volver atras (modificarWeb) -->
  <script type="text/javascript" src="/js/scripts/eliminarWeb.js"></script> <!-- eliminamos las webs -->
- <script type="text/javascript" src="/js/scripts/addWeb.js?ver=<?= date('Ymdhms') ?>"></script> <!-- añadimos las webs -->
+ <script type="text/javascript" src="/js/scripts/addWeb.js"></script> <!-- añadimos las webs -->
  <script type="text/javascript" src="/js/scripts/guardarWeb.js"></script> <!-- guardamos las webs -->
  <script type="text/javascript" src="/js/scripts/next.js"></script> <!-- boton next pestaña modificarWeb -->
  <script type="text/javascript" src="/js/scripts/previo.js"></script> <!-- boton previous pestaña modificarWeb -->

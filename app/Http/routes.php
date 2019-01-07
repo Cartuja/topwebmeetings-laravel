@@ -88,7 +88,7 @@ Route::post('/ajax/eliminarWeb', function(){
 //-Eliminar web
 
 //Eliminar web
-Route::match(['post','get'],'/ajax/addWeb', function(){
+Route::post('/ajax/addWeb', function(){
 	return response()->json(ControllerModificarWeb::addWeb(Input::All()));
 });
 //-Eliminar web

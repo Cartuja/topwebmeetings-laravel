@@ -6,7 +6,7 @@
 	<article class="theme_article post_format_standard instock theme_blue">
 		<div class="post_content">
 			<div itemprop="articleBody" class="post_text_area">
-				<div class="sc_blogger sc_blogger_horizontal style_image_small sc_columns sc_columns_count_4">
+				<div class="sc_blogger style_image_small sc_columns sc_columns_count_4">
 					<!-- puzzle item -->
 					<?php
 						for ($i=0; $i < count($webs) ; $i++) {
@@ -17,7 +17,7 @@
 							$imagen_web = $webs[$i]['LogoWebs'];
 							$tags_web = $webs[$i]['Tags'];
 					?>
-					<div style="padding:4px;margin:2px;margin-bottom:15px;" class="sc_blogger_item sc_column_item sc_column_item_1 first">
+					<div style="padding:4px;margin:2px;margin-bottom:15px;" class="sc_column_item sc_column_item_<?=$i ?>">
 					  <div class="title_area">
 					    <h4 style="margin-left:10px;" class="sc_blogger_title sc_title entry-title">
 					      <a href="<?= $nombre_web ?>"><?= $nombre_web ?></a>
