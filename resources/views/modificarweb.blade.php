@@ -58,7 +58,7 @@ $posicionWeb = 1;
             </div>
             <div class="field">
               <label for="descripcion_web" style="margin-right: 2%;"> Descripcion: </label>
-              <textarea id="descripcion_web" name="descripcion_web" placeholder="Descripcion"><?= $descripcion_web ?></textarea>
+              <textarea id="descripcion_web" name="descripcion_web" placeholder="Descripcion">hola <?= $descripcion_web ?></textarea>
               <div id="div_descripcion_web"></div>
             </div>
             <div class="field">
