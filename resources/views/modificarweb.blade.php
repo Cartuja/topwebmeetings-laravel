@@ -57,22 +57,25 @@ $posicionWeb = 1;
               <div id="div_nombre_web"></div>
             </div>
             <div class="field">
-              <label for="descripcion_web" style="margin-right: 2%;"> Descripcion: </label>
-              <textarea id="descripcion_web" name="descripcion_web" placeholder="Descripcion"><?= $descripcion_web ?></textarea>
-              <div id="div_descripcion_web"></div>
+              <div id="toolbar-container"> Descripcion </div>
+              <div id="editor" style="background-color:#dddddd;">
+                <p id="descripcion_web"> <?= $descripcion_web ?> </p>
+              </div>
               <script>
-                  DecoupledEditor
-                      .create( document.querySelector( '#editor' ) )
-                      .then( editor => {
-                          const toolbarContainer = document.querySelector( '#toolbar-container' );
+                DecoupledEditor
+                    .create( document.querySelector( '#editor' ) )
+                    .then( editor => {
+                        const toolbarContainer = document.querySelector( '#toolbar-container' );
 
-                          toolbarContainer.appendChild( editor.ui.view.toolbar.element );
-                      } )
-                      .catch( error => {
-                          console.error( error );
-                      } );
+                        toolbarContainer.appendChild( editor.ui.view.toolbar.element );
+                    } )
+                    .catch( error => {
+                        console.error( error );
+                    } );
               </script>
             </div>
+            <div id="div_descripcion_web"></div>
+            <br>
             <div class="field">
               <label for="logo_web" style="margin-right: 2%;"> Logo: </label>
               <input type="hidden" id="imagen" name="imagen" value="<?= $imagen_web ?>">
@@ -106,6 +109,13 @@ $posicionWeb = 1;
             </div>
             <button style="float:right; margin-left:5%;" onclick="return guardar()">Grabar web</span></button>
             <button style="float:right" onclick="return eliminar()">Eliminar web</span></button>
+            <!--<div id="div_seguro_eliminar" style="display:none;">
+              <div style="border:2px solid blue; width:60%; padding:15px;" >
+                  <span style="margin-right: 10px;"> ELIMINAR </span>
+                  SI<input style="margin-right: 10px;margin-left:5px;" type="radio" name="seguro_eliminar" value="si">
+                  NO<input style="margin-left:5px;" type="radio" name="seguro_eliminar" value="no">
+              </div>
+            </div>-->
         </form>
         </div>
       </article>

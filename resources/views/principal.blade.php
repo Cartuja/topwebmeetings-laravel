@@ -29,6 +29,7 @@
 
 	<link rel="stylesheet" href="/js/prettyphoto/css/prettyPhoto.css" type="text/css" media="all" />
 	<link rel="stylesheet" href="/js/mediaplayer/mediaelementplayer.css" type="text/css" media="all" />
+	<script type="text/javascript" src="/js/ckeditor5-build-decoupled-document/ckeditor.js?ver=<?= date('Y-m-d-h-i-s') ?>"></script> <!-- ckeditor -->
 </head>
 <body class="theme_regular puzzles_heavy reviews_5 puzzles_animations wide no-js" data-puzzlestyle="heavy">
 <div id="page" class="theme_body">
@@ -137,7 +138,7 @@
 	    </aside>
 	    <!-- #widget recent post -->
 	    <!-- widget contact form -->
-			<script type="text/javascript" src="/js/scripts/contact.js?ver=<?= date('Y-m-d-h-i-s') ?>"></script>
+			<script type="text/javascript" src="/js/scripts/contact.js"></script>
 	    <aside class="widget widget_text">
 	      <h3 class="widget_title theme_title">Contact form</h3>
 				<div id="resultado_contact"></div>
@@ -193,7 +194,7 @@ function centrar() {
 </div>
 <!-- /Login Acceder Form -->
 
-<script type="text/javascript" src="/js/scripts/registro.js?ver=<?php date('Ymdhis') ?>>"></script>
+<script type="text/javascript" src="/js/scripts/registro.js"></script>
 <div id="popup_register" class="popup_form">
 <div class="popup_body theme_article">
 <h4 class="popup_title">¡Regístrate!</h4>
@@ -210,7 +211,7 @@ function centrar() {
     <div class="popup_field popup_button"><button onclick="return Registro()" class="theme_button">Registrarse</button></div>
 </div>
 </div>
- <script type="text/javascript" src="/js/scripts/eliminarWeb.js"></script> <!-- eliminamos las webs -->
+ <script type="text/javascript" src="/js/scripts/eliminarWeb.js?ver=<?= date('Y-m-d-h-i-s') ?>"></script> <!-- eliminamos las webs -->
  <script type="text/javascript" src="/js/scripts/guardarWeb.js"></script> <!-- guardamos las webs -->
  <script type="text/javascript" src="/js/scripts/next.js"></script> <!-- boton next pestaña modificarWeb -->
  <script type="text/javascript" src="/js/scripts/previo.js"></script> <!-- boton previous pestaña modificarWeb -->
@@ -218,7 +219,6 @@ function centrar() {
  <script type="text/javascript" src="/js/scripts/votar.js"></script> <!-- votaciones usuarios que esta en oneweb -->
  <script type="text/javascript" src="/js/scripts/addComent.js"></script> <!-- añadir comentarios, oneweb -->
  <script type="text/javascript" src="/js/scripts/eliminarComentario.js"></script> <!-- eliminar comentarios, oneweb -->
- <script type="text/javascript" src="/js/ckeditor5-build-decoupled-document/ckeditor.js"></script> <!-- ckeditor -->
  <script type="text/javascript" src="/js/jquery/jquery.js"></script>
  <script type="text/javascript" src="/js/jquery/jquery-migrate.min.js"></script>
  <script type="text/javascript" src="/js/jquery/ui/jquery-ui-1.10.4.custom.js"></script>
@@ -230,7 +230,7 @@ function centrar() {
  <script type="text/javascript" src="/js/skip-link-focus-fix.js"></script>
  <script type="text/javascript" src="/js/_utils.js"></script>
  <script type="text/javascript" src="/js/_googlemap_init.js"></script>
- <script type="text/javascript" src="/js/_front.js?ver=<?= date('Ymdhis') ?>"></script>
+ <script type="text/javascript" src="/js/_front.js"></script>
  <script type="text/javascript" src="/js/_reviews.js"></script>
  <script type="text/javascript" src="/js/prettyphoto/jquery.prettyPhoto.min.js?ver=no-compose"></script>
  <script type="text/javascript" src="/js/jquery.flexslider.min.js"></script>
