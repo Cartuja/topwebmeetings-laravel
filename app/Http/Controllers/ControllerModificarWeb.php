@@ -56,19 +56,36 @@ class ControllerModificarWeb extends Controller {
       && trim($input['caracteristica_1_web']) && trim($input['caracteristica_2_web']) != '' && trim($input['caracteristica_3_web']) != ''
       && trim($input['tags']) != '' && trim($input['id_web']) != '')
       {
-        $nueva_web = ModelIndex::find($input['id_web']);
-        $nueva_web->NombreWeb=$input['nombre_web'];
-        $nueva_web->LogoWebs=$input['logo_web'];
-        $nueva_web->DescripcionWeb=$input['descripcion_web'];
-        $nueva_web->LogoWebs=$input['logo_web'];
-        $nueva_web->UrlWeb=$input['url_web'];
-        $nueva_web->Caracteristica1=$input['caracteristica_1_web'];
-        $nueva_web->Caracteristica2=$input['caracteristica_2_web'];
-        $nueva_web->Caracteristica3=$input['caracteristica_3_web'];
-        $nueva_web->Tags=$input['tags'];
-        $nueva_web->save();
-
-        $devuelve['ok'] = 1;
+        if($input['id_web'] == 0)
+        {
+          $nueva_web = new ModelIndex();
+          $nueva_web->NombreWeb=$input['nombre_web'];
+          $nueva_web->LogoWebs=$input['logo_web'];
+          $nueva_web->DescripcionWeb=$input['descripcion_web'];
+          $nueva_web->LogoWebs=$input['logo_web'];
+          $nueva_web->UrlWeb=$input['url_web'];
+          $nueva_web->Caracteristica1=$input['caracteristica_1_web'];
+          $nueva_web->Caracteristica2=$input['caracteristica_2_web'];
+          $nueva_web->Caracteristica3=$input['caracteristica_3_web'];
+          $nueva_web->Tags=$input['tags'];
+          $nueva_web->save();
+          $devuelve['ok'] = 2;
+        }
+        else
+        {
+          $nueva_web = ModelIndex::find($input['id_web']);
+          $nueva_web->NombreWeb=$input['nombre_web'];
+          $nueva_web->LogoWebs=$input['logo_web'];
+          $nueva_web->DescripcionWeb=$input['descripcion_web'];
+          $nueva_web->LogoWebs=$input['logo_web'];
+          $nueva_web->UrlWeb=$input['url_web'];
+          $nueva_web->Caracteristica1=$input['caracteristica_1_web'];
+          $nueva_web->Caracteristica2=$input['caracteristica_2_web'];
+          $nueva_web->Caracteristica3=$input['caracteristica_3_web'];
+          $nueva_web->Tags=$input['tags'];
+          $nueva_web->save();
+          $devuelve['ok'] = 1;
+        }
       }
       else
       {

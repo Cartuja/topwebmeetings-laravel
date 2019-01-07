@@ -2,7 +2,7 @@ function eliminar(){
   var id_web = jQuery("#id_web").val();;
   var _token = jQuery('[name=_token]').val();
   var seguro_eliminar = confirm("¿Seguro que quieres eliminar la web?");
-  console.log(seguro_eliminar);
+  //console.log(seguro_eliminar);
   if(seguro_eliminar)
   {
     var datos = {

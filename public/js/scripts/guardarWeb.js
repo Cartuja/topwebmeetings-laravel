@@ -124,11 +124,20 @@ function guardar(){
   		success:function(respuesta)
   		{
         //console.log(respuesta);
-        if(respuesta.ok == 1){
+        if(respuesta.ok == 1)
+        {
           jQuery('#respuesta_añadir_web').html("<br><div style'width:50%;' id='respuesta_añadir_web' class='sc_infobox sc_infobox_style_success'> ¡Has actualizado la web! </div>");
-        } else{
+        }
+        else if(respuesta.ok == 2)
+        {
+          console.log(respuesta);
+          jQuery('#respuesta_añadir_web').html("<br><div style'width:50%;' id='respuesta_añadir_web' class='sc_infobox sc_infobox_style_success'> ¡Has añadido nueva web! </div>");
+
+        }
+        else{
           jQuery('#respuesta_añadir_web').html("<br><div style'width:50%;' id='respuesta_añadir_web' class='sc_infobox sc_infobox_style_error'> Rellena todos los campos </div>");
         }
+
   		},
   		error:function(error)
   		{
