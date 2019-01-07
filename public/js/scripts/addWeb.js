@@ -13,8 +13,9 @@ function addWeb(){
   jQuery('#posicion_web').val('');
 
 
-// boton añadir y eliminar se esconden y solo podemos grabar cuando no exista
+  //boton añadir y eliminar se esconden y solo podemos grabar cuando no exista
   jQuery('#btn_eliminar_web').css('display', 'none');
   jQuery('#btn_add_web').css('display', 'none');
+  jQuery('#btn_volver_atras').show();
   return false;
 }
