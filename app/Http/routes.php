@@ -82,8 +82,14 @@ Route::post('/ajax/guardarWeb', function(){
 //-Guardar web
 
 //Eliminar web
-Route::match(['post','get'],'/ajax/eliminarWeb', function(){
+Route::post('/ajax/eliminarWeb', function(){
 	return response()->json(ControllerModificarWeb::EliminarWeb(Input::All()));
+});
+//-Eliminar web
+
+//Eliminar web
+Route::match(['post','get'],'/ajax/addWeb', function(){
+	return response()->json(ControllerModificarWeb::addWeb(Input::All()));
 });
 //-Eliminar web
 

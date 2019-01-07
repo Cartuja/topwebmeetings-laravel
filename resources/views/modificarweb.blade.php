@@ -108,7 +108,8 @@ $posicionWeb = 1;
               <div id="div_tags_web"></div>
             </div>
             <button style="float:right; margin-left:5%;" onclick="return guardar()">Grabar web</span></button>
-            <button style="float:right" onclick="return eliminar()">Eliminar web</span></button>
+            <button style="float:right;margin-left:5%;" onclick="return eliminar()">Eliminar web</span></button>
+            <button style="float:right;" onclick="return addWeb()">Añdir nueva web</span></button>
             <!--<div id="div_seguro_eliminar" style="display:none;">
               <div style="border:2px solid blue; width:60%; padding:15px;" >
                   <span style="margin-right: 10px;"> ELIMINAR </span>
