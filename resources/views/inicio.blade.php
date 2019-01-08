@@ -12,7 +12,7 @@
     <div id="content" class="content_blog post_single" role="main" itemscope itemtype="http://schema.org/Blog">
       <!-- post item -->
       <!--Recorremos webs-->
-      {!! TITULO_INICIO !!}
+      
       <p> Cada año, miles de solteros deciden buscar el amor verdadero en una <b>página web de citas</b>. Pero hay tantas opciones disponibles,
         que la tarea de elegir la más adecuada resulta ser muy difícil. Para ayudarte con eso, hemos probado los <b>sitios de citas online</b> más
          importantes del mercado español. En este ranking te contamos cómo funcionan y las características más importantes de cada uno.

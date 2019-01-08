@@ -111,7 +111,7 @@
 		</div>
 		<div id="header_middle_fixed"></div>
 	</header>
-
+	<?php //Config::get('variables') ?>
 	<!-- main -->
 		@yield('contenido')
 	<!-- /main -->
