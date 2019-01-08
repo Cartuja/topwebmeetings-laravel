@@ -157,23 +157,23 @@ function guardar(){
         //console.log("ok");
         if(respuesta.ok == 1)
         {
-          jQuery('#respuesta_añadir_web').html("<br><div style'width:50%;' id='respuesta_añadir_web' class='sc_infobox sc_infobox_style_success'> ¡Has actualizado la web! </div>");
+          jQuery('#respuesta_añadir_web').html("<div style'width:50%;' id='respuesta_añadir_web' class='sc_infobox sc_infobox_style_success'> ¡Has actualizado la web! </div>");
         }
         else if(respuesta.ok == 2)
         {
           //console.log(respuesta);
-          jQuery('#respuesta_añadir_web').html("<br><div style'width:50%;' id='respuesta_añadir_web' class='sc_infobox sc_infobox_style_success'> ¡Has añadido nueva web! </div>");
+          jQuery('#respuesta_añadir_web').html("<div style'width:50%;' id='respuesta_añadir_web' class='sc_infobox sc_infobox_style_success'> ¡Has añadido nueva web! </div>");
 
         }
         else
         {
-          jQuery('#respuesta_añadir_web').html("<br><div style'width:50%;' id='respuesta_añadir_web' class='sc_infobox sc_infobox_style_error'> Rellena todos los campos </div>");
+          jQuery('#respuesta_añadir_web').html("<div style'width:50%;' id='respuesta_añadir_web' class='sc_infobox sc_infobox_style_error'> Rellena todos los campos </div>");
         }
 
   		},
   		error:function(error)
   		{
-  			jQuery('#error_login').html("<br><div id='error_login' class='sc_infobox sc_infobox_style_error'> Internal Server Error </div>");
+  			jQuery('#error_login').html("<div id='respuesta_añadir_web' class='sc_infobox sc_infobox_style_error'> Internal Server Error </div>");
   		}
   	});
   }

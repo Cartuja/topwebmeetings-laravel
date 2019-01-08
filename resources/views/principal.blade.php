@@ -30,6 +30,15 @@
 	<link rel="stylesheet" href="/js/prettyphoto/css/prettyPhoto.css" type="text/css" media="all" />
 	<link rel="stylesheet" href="/js/mediaplayer/mediaelementplayer.css" type="text/css" media="all" />
 	<script type="text/javascript" src="/js/ckeditor5-build-decoupled-document/ckeditor.js?ver=<?= date('Y-m-d-h-i-s') ?>"></script> <!-- ckeditor -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-37046849-52"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'UA-37046849-52');
+	</script>
 </head>
 <body class="theme_regular puzzles_heavy reviews_5 puzzles_animations wide no-js" data-puzzlestyle="heavy">
 <div id="page" class="theme_body">
@@ -117,7 +126,10 @@
 	        <div class="logo logo_text"><a href="{{ route('inicio') }}">
 	          <span class="logo_title theme_header">top<span class="theme_accent">web</span>meetings</span></a>
 	        </div>
-	        <div class="logo_descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+	        <div class="logo_descr">
+						Esperemos que este ranking te ayude en la búsqueda de la mejor página de citas y gracias a ella puedas encontrar a
+						esa persona tan deseada, ya sea el futuro amor de tu vida o un simple encuentro esporádico.
+					<div>
 	      </div>
 	    </aside>
 	    <!-- /logo and description -->
@@ -220,7 +232,7 @@ function centrar() {
 </div>
  <script type="text/javascript" src="/js/scripts/volverAtras.js"></script> <!-- volver atras (modificarWeb) -->
  <script type="text/javascript" src="/js/scripts/ContrasenaOlvidada.js"></script> <!-- contraseña OLVIDADA -->
- <script type="text/javascript" src="/js/scripts/NuevaPass.js?ver=<?= date('Ymdhms') ?>"></script> <!-- NUEVA contrseña -->
+ <script type="text/javascript" src="/js/scripts/NuevaPass.js"></script> <!-- NUEVA contrseña -->
  <script type="text/javascript" src="/js/scripts/eliminarWeb.js"></script> <!-- eliminamos las webs -->
  <script type="text/javascript" src="/js/scripts/addWeb.js"></script> <!-- añadimos las webs -->
  <script type="text/javascript" src="/js/scripts/guardarWeb.js"></script> <!-- guardamos las webs -->

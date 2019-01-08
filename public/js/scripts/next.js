@@ -40,7 +40,7 @@ function Next(){
     timeout:0,
     error:function(error)
     {
-      jQuery('#resultado_next').html("<br><div id='error_login' class='sc_infobox sc_infobox_style_error'> Internal Server Error </div>");
+      jQuery('#resultado_next').html("<br><div id='resultado_next' class='sc_infobox sc_infobox_style_error'> Internal Server Error </div>");
     }
   });
   return false;

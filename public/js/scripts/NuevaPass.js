@@ -23,18 +23,18 @@ function NuevaPass(){
   if(correo == "" || pass == "" || pass2 == "")
   {
     error = true;
-    jQuery('#error_nueva_pass').html("<br><div id='error_registro' class='sc_infobox sc_infobox_style_error'> Rellena todos los campos. </div>");
+    jQuery('#error_nueva_pass').html("<br><div id='error_nueva_pass' class='sc_infobox sc_infobox_style_error'> Rellena todos los campos. </div>");
   } else if (!validar_email){
     error = true;
-    jQuery('#error_nueva_pass').html("<br><div id='error_registro' class='sc_infobox sc_infobox_style_error'> Ese email no es valido. </div>");
+    jQuery('#error_nueva_pass').html("<br><div id='error_nueva_pass' class='sc_infobox sc_infobox_style_error'> Ese email no es valido. </div>");
   } else if (pass != pass2){
     error = true;
-    jQuery('#error_nueva_pass').html("<br><div id='error_registro' class='sc_infobox sc_infobox_style_error'> Las contraseñas son diferentes. </div>");
+    jQuery('#error_nueva_pass').html("<br><div id='error_nueva_pass' class='sc_infobox sc_infobox_style_error'> Las contraseñas son diferentes. </div>");
   } else if(!validar_pass || !validar_pass2){
     error = true;
-    jQuery('#error_nueva_pass').html("<br><div id='error_registro' class='sc_infobox sc_infobox_style_error'> La contraseña debe tener entre 8 y 15 caracteres, al menos un dígito, al menos una minúscula, al menos una mayúscula, sin blancos y al menos un caracter especial. </div>");
+    jQuery('#error_nueva_pass').html("<br><div id='error_nueva_pass' class='sc_infobox sc_infobox_style_error'> La contraseña debe tener entre 8 y 15 caracteres, al menos un dígito, al menos una minúscula, al menos una mayúscula, sin blancos y al menos un caracter especial. </div>");
   }
-  
+
   if(!error)
   {
     jQuery.ajax({
@@ -55,13 +55,13 @@ function NuevaPass(){
           location.reload();
         }
         else {
-          jQuery('#error_nueva_pass').html("<br><div id='error_login' class='sc_infobox sc_infobox_style_error'> El correo no existe </div>");
+          jQuery('#error_nueva_pass').html("<div id='error_nueva_pass' class='sc_infobox sc_infobox_style_error'> El correo no existe </div>");
         }
       },
       timeout:3000,
       error:function(error)
       {
-        jQuery('#error_nueva_pass').html("<br><div id='error_login' class='sc_infobox sc_infobox_style_error'> Internal Server Error </div>");
+        jQuery('#error_nueva_pass').html("<div id='error_nueva_pass' class='sc_infobox sc_infobox_style_error'> Internal Server Error </div>");
       }
     });
   }

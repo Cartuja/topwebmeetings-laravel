@@ -7,5 +7,5 @@ session_start();
 abstract class Controller extends BaseController {
 
 	use DispatchesCommands, ValidatesRequests;
-
+	$TITULO_INICIO = "<h1> Ranking de las Páginas Webs de Citas </h1>";
 }

@@ -13,15 +13,15 @@ function Login()
 
   if(log == "")
   {
-    jQuery('#error_login').html("<br><div id='error_registro' class='sc_infobox sc_infobox_style_error'> Campo email vacio. </div>");
+    jQuery('#error_login').html("<br><div id='error_login' class='sc_infobox sc_infobox_style_error'> Campo email vacio. </div>");
     error = true;
   }
   else if(!validar_email)
   {
-    jQuery('#error_login').html("<br><div id='error_registro' class='sc_infobox sc_infobox_style_error'> Ese correo no es valido. </div>");
+    jQuery('#error_login').html("<br><div id='error_login' class='sc_infobox sc_infobox_style_error'> Ese correo no es valido. </div>");
     error = true;
   } else if(pwd == ""){
-    jQuery('#error_login').html("<br><div id='error_registro' class='sc_infobox sc_infobox_style_error'> Contraseña vacia. </div>");
+    jQuery('#error_login').html("<br><div id='error_login' class='sc_infobox sc_infobox_style_error'> Contraseña vacia. </div>");
     error = true;
   }
 

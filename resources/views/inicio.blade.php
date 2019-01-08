@@ -12,12 +12,11 @@
     <div id="content" class="content_blog post_single" role="main" itemscope itemtype="http://schema.org/Blog">
       <!-- post item -->
       <!--Recorremos webs-->
-      <h1> Topwebmeetings </h1>
-      <h4> Datos </h4>
-      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+      {!! TITULO_INICIO !!}
+      <p> Cada año, miles de solteros deciden buscar el amor verdadero en una <b>página web de citas</b>. Pero hay tantas opciones disponibles,
+        que la tarea de elegir la más adecuada resulta ser muy difícil. Para ayudarte con eso, hemos probado los <b>sitios de citas online</b> más
+         importantes del mercado español. En este ranking te contamos cómo funcionan y las características más importantes de cada uno.
+         ¡Te deseamos buena suerte y que disfrutes en la búsqueda! </p>
       <?php
         $posicion_web = 0;
         for($i = 0; $i< count($webs);$i++){
@@ -101,6 +100,10 @@
       <?php } ?>
       <!-- /Recogemos webs -->
       <!-- /post item -->
+      <h2> Las mejores páginas para ligar online </h2>
+      <p>
+        Efectivamente, esta web es una especie de ranking en el que hablamos sobre las mejores páginas para ligar en España, aunque muchas de esas páginas de contactos también tienen muchos miembros hispanos de otros países. Hoy en día, existen muchos recursos para ligar en Internet, pero en este sitio nos centramos en las páginas web que te permiten conocer solteros y solteras en tu zona. En cada artículo, explicamos el funcionamiento de una web para ligar, con una descripción de sus funciones, cómo registrarse, cómo buscar gente, de qué herramientas dispone para conocer gente y algunos consejos para ligar más. Las páginas de las que hablamos aquí te permiten registrarte gratuitamente, crear tu perfil, subir fotos tuyas y buscar entre todos sus perfiles. Algunas son totalmente gratis y otras cobran una cantidad por desbloquear funciones adicionales, permitirte contactar con otros miembros o mostrar tu perfil de forma destacada.
+      </p>
     </div>
   </div>
 </div>

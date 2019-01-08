@@ -80,20 +80,27 @@ class ControllerUsuario extends Controller
 		if (isset($input['correo']) && isset($input['pass']))
 		{
 			$u=ModelUsuario::Where('EmailUsuario',$input['correo'])->get();
-			if ($u[0]['EmailUsuario'] == $input['correo'])
-			{
-        $id_usuario = $u[0]['IdUsuario'];
-        $cambiar_pass = ModelUsuario::find($id_usuario);
-        $cambiar_pass->PassUsuario=$input['pass'];
-        $cambiar_pass->save();
-				$devuelve['ok']=1;
-        $_SESSION['session_email'] = $input['correo'];
-        $_SESSION['tipo_usuario'] = $u[0]['TipoUsuario'];
+      if(count($u) > 0)
+      {
+  			if ($u[0]['EmailUsuario'] == $input['correo'])
+  			{
+          $id_usuario = $u[0]['IdUsuario'];
+          $cambiar_pass = ModelUsuario::find($id_usuario);
+          $cambiar_pass->PassUsuario=$input['pass'];
+          $cambiar_pass->save();
+  				$devuelve['ok']=1;
+          $_SESSION['session_email'] = $input['correo'];
+          $_SESSION['tipo_usuario'] = $u[0]['TipoUsuario'];
 
-        //añadir metodo para enviar correo al usuario
-			}
-			else
-				$devuelve['ok']=0;
+          //añadir metodo para enviar correo al usuario
+  			}
+  			else
+				    $devuelve['ok']=0;
+      }
+      else
+      {
+        $devuelve['ok'] = 0;
+      }
 		}
 		return $devuelve;
 

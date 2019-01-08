@@ -22,16 +22,16 @@ function deletComent(){
         //console.log(respuesta)
         if(respuesta.ok==1) //Si se elimina
         {
-          jQuery('#resultado_eliminar_comentario').html("<br><div id='error_login' class='sc_infobox sc_infobox_style_success'> Has eliminado el comentario </div>");
+          jQuery('#resultado_eliminar_comentario').html("<br><div id='resultado_eliminar_comentario' class='sc_infobox sc_infobox_style_success'> Has eliminado el comentario </div>");
         }
         else {
-          jQuery('#resultado_eliminar_comentario').html("<br><div id='error_login' class='sc_infobox sc_infobox_style_error'> No se ha podido eliminar el comentario </div>");
+          jQuery('#resultado_eliminar_comentario').html("<br><div id='resultado_eliminar_comentario' class='sc_infobox sc_infobox_style_error'> No se ha podido eliminar el comentario </div>");
         }
   		},
       timeout:3000,
   		error:function(error)
   		{
-  			jQuery('#error_login').html("<br><div id='error_login' class='sc_infobox sc_infobox_style_error'> Internal Server Error </div>");
+  			jQuery('#error_login').html("<br><div id='resultado_eliminar_comentario' class='sc_infobox sc_infobox_style_error'> Internal Server Error </div>");
   		}
   	});
   }

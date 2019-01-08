@@ -8,22 +8,24 @@ use App\Http\Controllers\ControllerPageOneWeb;
 use App\Http\Controllers\ControllerContact;
 use App\Http\Controllers\ControllerModificarWeb;
 
-/* Ruta Inicio */
+//Ruta Inicio
 Route::get('/', ['as' => 'inicio', 'uses' => 'ControllerPageIndex@route']);
+//-Ruta Inicio
 
 //Ruta para desconectar usuarios
 Route::post('/desconectar', ['as' => 'desconectar', 'uses' => 'ControllerUsuario@desconectar']);
+//-Ruta para desconectar usuarios
 
-/* Mandamos a la ruta '/' que es el inicio con la informacion de las webs */
+// Mandamos a la ruta '/' que es el inicio con la informacion de las webs
 Route::get('/', 'ControllerPageIndex@Webs');
-/* -Mandamos a la ruta '/' que es el inicio con la informacion de las webs*/
+//-Mandamos a la ruta '/' que es el inicio con la informacion de las webs
 
 //Ruta a resumen de todas la webs
 Route::get('/allweb', ['as' => 'allweb', 'uses' => 'ControllerPageAllWeb@route']);
 //-Ruta a resumen de todas la webs
 
 //Ruta a modificar webs
-Route::match(['get','post'],'/modificarWeb', ['as' => 'modificarWeb', 'uses' => 'ControllerModificarWeb@route']);
+Route::get('/modificarWeb', ['as' => 'modificarWeb', 'uses' => 'ControllerModificarWeb@route']);
 //Ruta a modificar webs
 
 //Ruta a oneweb
@@ -83,7 +85,7 @@ Route::post('/ajax/PreviaWeb', function(){
 //-Ruta anterior web
 
 //Guardar web
-Route::match(['get','post'],'/ajax/guardarWeb', function(){
+Route::post('/ajax/guardarWeb', function(){
 	return response()->json(ControllerModificarWeb::GuardarWeb(Input::All()));
 });
 //-Guardar web

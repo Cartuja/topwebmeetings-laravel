@@ -34,7 +34,7 @@ function Votar(tipo_votacion)
   		},
   		error:function(error)
   		{
-  			jQuery('#error_login').html("<br><div id='error_login' class='sc_infobox sc_infobox_style_error'> Internal Server Error </div>");
+  			jQuery('#error_login').html("<br><div id='error_votar' class='sc_infobox sc_infobox_style_error'> Internal Server Error </div>");
   		},
       timeout:3000,
   	});

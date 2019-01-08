@@ -34,15 +34,15 @@ function contact(){
     }).done(function(respuesta) {
       console.log(respuesta);
       if(respuesta.ok==1){
-        jQuery("#resultado_contact").html("<div id='error_votar' class='sc_infobox sc_infobox_style_success'> Gracias por contactar con nosotros </div>");
+        jQuery("#resultado_contact").html("<div id='resultado_contact' class='sc_infobox sc_infobox_style_success'> Gracias por contactar con nosotros </div>");
       } else{
-        jQuery("#resultado_contact").html("<div id='error_login' class='sc_infobox sc_infobox_style_error'> Rellena todos los campos </div>");
+        jQuery("#resultado_contact").html("<div id='resultado_contact' class='sc_infobox sc_infobox_style_error'> Rellena todos los campos </div>");
       }
     });
   }
   else
   {
-    jQuery("#resultado_contact").html("<div id='error_login' class='sc_infobox sc_infobox_style_error'> Rellena el campo del " + array_error +"</div>");
+    jQuery("#resultado_contact").html("<div id='resultado_contact' class='sc_infobox sc_infobox_style_error'> Rellena el campo del " + array_error +"</div>");
   }
 
   return false;
