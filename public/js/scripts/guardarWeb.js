@@ -2,7 +2,6 @@ function guardar(){
   var id_web = jQuery("#id_web").val();;
   var nombre_web = jQuery("#nombre_web").val();
   var descripcion_web = jQuery("#editor").children().text();
-  var logo_web = jQuery("#logo_web").val();
   var url_web = jQuery("#url_web").val();
   var caracteristica_1_web = jQuery("#caracteristica_1_web").val();
   var caracteristica_2_web = jQuery("#caracteristica_2_web").val();
@@ -11,11 +10,43 @@ function guardar(){
   var _token = jQuery('[name=_token]').val();
   var error = false;
 
+  // UPLOAD IMAGENES
+   var formData = new FormData();
+   formData.append('_token', _token);
+   var file = jQuery('#logo_web');
+   formData.append("file", file[0].files[0]);
+   console.log(formData.get('file'));
+  console.log(formData.get('_token'));
+
+  jQuery.ajax({
+      type: "POST",
+      url: "/ajax/upload-logo",
+      data: formData,
+      processData: false,
+      contentType: false,
+      success: function(respuesta) {
+        console.log(respuesta);
+        if(respuesta.ok == 1)
+        {
+          jQuery('#respuesta_imagen').html("<div style'width:50%;' id='respuesta_imagen' class='sc_infobox sc_infobox_style_success'> Imagen añadida. </div>");
+        }
+        else
+        {
+          jQuery('#respuesta_imagen').html("<div style'width:50%;' id='respuesta_imagen' class='sc_infobox sc_infobox_style_error'> Imagen no añadida  </div>");
+
+        }
+      },
+      error: function(respuesta) {
+
+      }
+  });
+
+  //-UPLOAD IMAGENES
+
   var datos = {
                 'id_web':id_web,
                 'nombre_web':nombre_web,
                 'descripcion_web':descripcion_web,
-                'logo_web':logo_web,
                 'url_web':url_web,
                 'caracteristica_1_web':caracteristica_1_web,
                 'caracteristica_2_web':caracteristica_2_web,
@@ -123,7 +154,7 @@ function guardar(){
   		},
   		success:function(respuesta)
   		{
-        //console.log(respuesta);
+        //console.log("ok");
         if(respuesta.ok == 1)
         {
           jQuery('#respuesta_añadir_web').html("<br><div style'width:50%;' id='respuesta_añadir_web' class='sc_infobox sc_infobox_style_success'> ¡Has actualizado la web! </div>");
@@ -134,7 +165,8 @@ function guardar(){
           jQuery('#respuesta_añadir_web').html("<br><div style'width:50%;' id='respuesta_añadir_web' class='sc_infobox sc_infobox_style_success'> ¡Has añadido nueva web! </div>");
 
         }
-        else{
+        else
+        {
           jQuery('#respuesta_añadir_web').html("<br><div style'width:50%;' id='respuesta_añadir_web' class='sc_infobox sc_infobox_style_error'> Rellena todos los campos </div>");
         }
 

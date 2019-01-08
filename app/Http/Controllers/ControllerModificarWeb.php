@@ -48,7 +48,7 @@ class ControllerModificarWeb extends Controller {
   public static function guardarWeb($input)
   {
     $devuelve['ok'] = 0;
-    if(isset($input['nombre_web']) && isset($input['descripcion_web']) && isset($input['logo_web']) && isset($input['url_web'])
+    if(isset($input['nombre_web']) && isset($input['descripcion_web']) && isset($input['url_web'])
     && isset($input['caracteristica_1_web']) && isset($input['caracteristica_2_web']) && isset($input['caracteristica_3_web'])
     && isset($input['tags']) && isset($input['id_web']))
     {
@@ -60,9 +60,8 @@ class ControllerModificarWeb extends Controller {
         {
           $nueva_web = new ModelIndex();
           $nueva_web->NombreWeb=$input['nombre_web'];
-          $nueva_web->LogoWebs=$input['logo_web'];
           $nueva_web->DescripcionWeb=$input['descripcion_web'];
-          $nueva_web->LogoWebs=$input['logo_web'];
+          $nueva_web->LogoWebs="./images/imagenes_web/".strtolower($input['nombre_web']).".jpg";
           $nueva_web->UrlWeb=$input['url_web'];
           $nueva_web->Caracteristica1=$input['caracteristica_1_web'];
           $nueva_web->Caracteristica2=$input['caracteristica_2_web'];
@@ -75,9 +74,8 @@ class ControllerModificarWeb extends Controller {
         {
           $nueva_web = ModelIndex::find($input['id_web']);
           $nueva_web->NombreWeb=$input['nombre_web'];
-          $nueva_web->LogoWebs=$input['logo_web'];
           $nueva_web->DescripcionWeb=$input['descripcion_web'];
-          $nueva_web->LogoWebs=$input['logo_web'];
+          $nueva_web->LogoWebs="./images/imagenes_web/".strtolower($input['nombre_web']).".jpg";
           $nueva_web->UrlWeb=$input['url_web'];
           $nueva_web->Caracteristica1=$input['caracteristica_1_web'];
           $nueva_web->Caracteristica2=$input['caracteristica_2_web'];
@@ -94,6 +92,19 @@ class ControllerModificarWeb extends Controller {
     }
     return $devuelve;
   } //Fin funcion guardar web
+
+  public static function logo(Request $request){
+    $devuelve['ok'] = 0;
+    if ($request->hasFile('file'))
+    {
+      $file = $request->file('file');
+      $nombre = $file->getClientOriginalName();
+      $path = public_path('images/imagenes_web/');
+      $file->move($path, $nombre);
+      $devuelve['ok'] = 1;
+    }
+    return response()->json($devuelve);
+  }
 
   public static function EliminarWeb($input)
   {

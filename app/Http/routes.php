@@ -23,7 +23,7 @@ Route::get('/allweb', ['as' => 'allweb', 'uses' => 'ControllerPageAllWeb@route']
 //-Ruta a resumen de todas la webs
 
 //Ruta a modificar webs
-Route::get('/modificarWeb', ['as' => 'modificarWeb', 'uses' => 'ControllerModificarWeb@route']);
+Route::match(['get','post'],'/modificarWeb', ['as' => 'modificarWeb', 'uses' => 'ControllerModificarWeb@route']);
 //Ruta a modificar webs
 
 //Ruta a oneweb
@@ -57,7 +57,7 @@ Route::post('/ajax/votar', function ()
 //-Votaciones usuarios
 
 //Registro de usuarios
-Route::match(['get','post'],'/ajax/registro', function ()
+Route::post('/ajax/registro', function ()
 {
 	return response()->json(ControllerUsuario::Registro(Input::All()));
 });
@@ -83,7 +83,7 @@ Route::post('/ajax/PreviaWeb', function(){
 //-Ruta anterior web
 
 //Guardar web
-Route::post('/ajax/guardarWeb', function(){
+Route::match(['get','post'],'/ajax/guardarWeb', function(){
 	return response()->json(ControllerModificarWeb::GuardarWeb(Input::All()));
 });
 //-Guardar web
@@ -99,6 +99,10 @@ Route::post('/ajax/addWeb', function(){
 	return response()->json(ControllerModificarWeb::addWeb(Input::All()));
 });
 //-Eliminar web
+
+//Upload imagenes
+Route::post('/ajax/upload-logo', 'ControllerModificarWeb@logo');
+//-Upload imagenes
 
 //Contact footer
 Route::post('/ajax/contact', function ()

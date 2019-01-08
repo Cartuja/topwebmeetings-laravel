@@ -48,7 +48,7 @@ $posicionWeb = 1;
       <article class="theme_article instock theme_regular">
         <h1 id="titulo_web" style='margin-left:50px;'><?= $nombre_web ?> </h1>
         <div style="width: 80%; margin:auto;">
-        <form class="sc_contact_form">
+        <form class="sc_contact_form" enctype="multipart/form-data" method="POST">
             <input type="hidden" id="id_web" name="id_web" value="<?= $id_web ?>">
             <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
             <div class="field">
@@ -63,7 +63,7 @@ $posicionWeb = 1;
               </div>
               <script>
                 DecoupledEditor
-                    .create( document.querySelector( '#editor' ) )
+                    .create( document.querySelector( '#descripcion_web' ) )
                     .then( editor => {
                         const toolbarContainer = document.querySelector( '#toolbar-container' );
 
@@ -123,6 +123,7 @@ $posicionWeb = 1;
       </article>
       <div id="respuesta_añadir_web"></div>
       <div id="respuesta_eliminar_web"></div>
+      <div id="respuesta_imagen"></div>
     </div>
   </div>
 </div>
